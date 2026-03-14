@@ -1,0 +1,503 @@
+role,topic,difficulty,question,answer
+Data Scientist,Statistics,Easy,"What is the difference between mean, median, and mode?","Mean is the average value, median is the middle value when data is sorted, and mode is the most frequent value. Median is more robust to outliers compared to mean."
+Data Scientist,Statistics,Easy,What is variance?,Variance measures how far data points spread from the mean. It is the average of squared deviations from the mean.
+Data Scientist,Statistics,Medium,What is standard deviation?,Standard deviation is the square root of variance and represents the average amount by which values differ from the mean.
+Data Scientist,Statistics,Medium,What is covariance?,"Covariance measures how two variables move together. A positive value indicates they increase together, while a negative value indicates inverse movement."
+Data Scientist,Statistics,Medium,What is correlation?,"Correlation measures the strength and direction of a linear relationship between two variables, ranging from -1 to 1."
+Data Scientist,Statistics,Hard,What is the Central Limit Theorem?,"The Central Limit Theorem states that the sampling distribution of the sample mean approaches a normal distribution as sample size increases, regardless of the population distribution."
+Data Scientist,Statistics,Hard,What is a confidence interval?,A confidence interval provides a range of values within which the true population parameter is expected to lie with a specified level of confidence.
+Data Scientist,Hypothesis Testing,Easy,What is a null hypothesis?,The null hypothesis represents the default assumption that there is no effect or difference between groups.
+Data Scientist,Hypothesis Testing,Easy,What is a p-value?,"A p-value measures the probability of observing results at least as extreme as the sample data, assuming the null hypothesis is true."
+Data Scientist,Hypothesis Testing,Medium,What is Type I and Type II error?,Type I error occurs when a true null hypothesis is rejected. Type II error occurs when a false null hypothesis is not rejected.
+Data Scientist,Hypothesis Testing,Medium,What is statistical power?,Statistical power is the probability of correctly rejecting a false null hypothesis.
+Data Scientist,Hypothesis Testing,Hard,What is the difference between parametric and non-parametric tests?,"Parametric tests assume specific distribution properties (like normality), while non-parametric tests do not rely on such assumptions."
+Data Scientist,EDA,Easy,What is Exploratory Data Analysis (EDA)?,"EDA is the process of analyzing and visualizing data to summarize main characteristics, detect patterns, and identify anomalies before modeling."
+Data Scientist,EDA,Medium,Why is data visualization important in EDA?,"Visualization helps identify patterns, trends, correlations, and outliers that may not be obvious from raw data."
+Data Scientist,EDA,Medium,How do you detect outliers?,"Outliers can be detected using boxplots, z-scores, IQR method, or visualization techniques."
+Data Scientist,EDA,Hard,What is skewness?,"Skewness measures asymmetry in data distribution. Positive skew means a longer right tail, while negative skew means a longer left tail."
+Data Scientist,Feature Selection,Easy,Why is feature selection important?,"Feature selection reduces overfitting, improves model performance, decreases training time, and enhances interpretability."
+Data Scientist,Feature Selection,Medium,What are filter methods in feature selection?,"Filter methods select features based on statistical measures like correlation, chi-square test, or mutual information."
+Data Scientist,Feature Selection,Medium,What are wrapper methods?,Wrapper methods evaluate subsets of features by training models and selecting combinations that produce the best performance.
+Data Scientist,Feature Selection,Hard,What is embedded feature selection?,"Embedded methods perform feature selection during model training, such as Lasso regression which shrinks some coefficients to zero."
+Data Scientist,Business Interpretation,Easy,Why is business understanding important in data science?,Business understanding ensures that the analysis aligns with company goals and produces actionable insights.
+Data Scientist,Business Interpretation,Medium,How do you translate model output into business value?,"By interpreting metrics in terms of revenue impact, cost savings, risk reduction, or operational efficiency."
+Data Scientist,Business Interpretation,Medium,What is KPI in business analytics?,A Key Performance Indicator (KPI) is a measurable value that indicates how effectively a company achieves business objectives.
+Data Scientist,Business Interpretation,Hard,How do you explain model uncertainty to stakeholders?,"By using confidence intervals, probability scores, and scenario analysis to communicate risk and expected variability in predictions."
+Data Scientist,Statistics,Hard,What is Bayesian statistics?,Bayesian statistics updates prior beliefs using observed data to compute posterior probabilities using Bayes' theorem.
+Data Scientist,Statistics,Medium,What is probability distribution?,A probability distribution describes how probabilities are assigned to different possible outcomes of a random variable.
+Data Scientist,Statistics,Medium,What is the difference between discrete and continuous variables?,"Discrete variables take countable values, while continuous variables can take any value within a range."
+Data Scientist,Statistics,Hard,What is the law of large numbers?,"The law of large numbers states that as the sample size increases, the sample mean converges to the population mean."
+Data Scientist,Statistics,Hard,What is sampling bias?,"Sampling bias occurs when certain members of a population are more likely to be selected, leading to non-representative samples."
+Data Scientist,Statistics,Medium,What is a normal distribution?,"A normal distribution is a symmetric, bell-shaped distribution defined by its mean and standard deviation."
+Data Scientist,Hypothesis Testing,Medium,What is a one-tailed vs two-tailed test?,"A one-tailed test checks for an effect in one direction, while a two-tailed test checks for an effect in both directions."
+Data Scientist,Hypothesis Testing,Hard,When should you use a t-test instead of a z-test?,A t-test is used when the population standard deviation is unknown and the sample size is small.
+Data Scientist,Hypothesis Testing,Medium,What is ANOVA?,ANOVA (Analysis of Variance) tests whether there are statistically significant differences between the means of three or more groups.
+Data Scientist,Hypothesis Testing,Hard,What is multiple testing problem?,"The multiple testing problem arises when performing many hypothesis tests, increasing the chance of false positives."
+Data Scientist,EDA,Medium,How do you handle missing data during EDA?,"Missing data can be handled by imputation, deletion, or modeling techniques depending on the context and missingness pattern."
+Data Scientist,EDA,Hard,What is multivariate analysis in EDA?,Multivariate analysis examines relationships among multiple variables simultaneously to detect interactions and dependencies.
+Data Scientist,EDA,Medium,Why check data distribution before modeling?,"Understanding distribution helps determine appropriate statistical tests, transformations, and modeling techniques."
+Data Scientist,Feature Selection,Medium,What is correlation-based feature selection?,It selects features highly correlated with the target but minimally correlated with each other.
+Data Scientist,Feature Selection,Hard,What is recursive feature elimination (RFE)?,RFE iteratively removes the least important features based on model weights until the optimal subset is obtained.
+Data Scientist,Feature Selection,Medium,What is dimensionality reduction vs feature selection?,"Feature selection keeps a subset of original features, while dimensionality reduction transforms features into new reduced dimensions."
+Data Scientist,Business Interpretation,Medium,What is ROI in analytics projects?,Return on Investment (ROI) measures the financial benefit gained relative to the cost of implementing a solution.
+Data Scientist,Business Interpretation,Hard,How do you evaluate trade-offs between precision and recall in business terms?,"Trade-offs are evaluated based on cost implications, such as false positives increasing operational costs and false negatives causing revenue loss."
+Data Scientist,Business Interpretation,Medium,What is A/B testing in business context?,A/B testing compares two variants to determine which performs better on a key metric like conversion rate.
+Data Scientist,Business Interpretation,Hard,How do you handle conflicting stakeholder requirements?,By aligning requirements with measurable business objectives and presenting data-driven trade-offs.
+Data Scientist,Statistics,Hard,What is heteroscedasticity?,Heteroscedasticity occurs when the variance of errors differs across levels of an independent variable.
+Data Scientist,Statistics,Medium,What is sampling distribution?,A sampling distribution is the probability distribution of a statistic computed from multiple samples.
+Data Scientist,Hypothesis Testing,Medium,What is effect size?,Effect size quantifies the magnitude of a difference or relationship independent of sample size.
+Data Scientist,EDA,Hard,What is data transformation?,Data transformation modifies data using techniques like log scaling or normalization to improve analysis and modeling.
+Data Scientist,Feature Selection,Medium,What is mutual information?,"Mutual information measures the dependency between variables, capturing both linear and non-linear relationships."
+Data Scientist,Business Interpretation,Medium,Why is interpretability important in business analytics?,Interpretability builds stakeholder trust and ensures decisions are understandable and actionable.
+Data Scientist,Statistics,Medium,What is skewness and kurtosis?,"Skewness measures the asymmetry of a distribution, while kurtosis measures the heaviness of its tails compared to a normal distribution."
+Data Scientist,Statistics,Hard,What is Maximum Likelihood Estimation (MLE)?,MLE is a method for estimating parameters by maximizing the likelihood that the observed data occurred under the assumed statistical model.
+Data Scientist,Statistics,Medium,What is a probability density function (PDF)?,A PDF describes the likelihood of a continuous random variable taking a particular value.
+Data Scientist,Statistics,Hard,What is the difference between frequentist and Bayesian approaches?,"Frequentist statistics treats parameters as fixed and data as random, while Bayesian statistics treats parameters as random variables updated using prior beliefs and observed data."
+Data Scientist,Statistics,Medium,What is conditional probability?,Conditional probability measures the likelihood of an event occurring given that another event has occurred.
+Data Scientist,Hypothesis Testing,Medium,What assumptions must hold for a t-test?,"Assumptions include normal distribution of data, independence of observations, and equal variances for independent samples t-test."
+Data Scientist,Hypothesis Testing,Hard,What is Bonferroni correction?,Bonferroni correction adjusts significance levels when performing multiple tests to control the overall Type I error rate.
+Data Scientist,Hypothesis Testing,Medium,What is chi-square test used for?,The chi-square test evaluates whether there is a significant association between categorical variables.
+Data Scientist,Hypothesis Testing,Hard,What is statistical significance vs practical significance?,"Statistical significance indicates whether an effect exists, while practical significance evaluates whether the effect is large enough to matter in real-world applications."
+Data Scientist,EDA,Medium,How do you identify multicollinearity during EDA?,Multicollinearity can be detected using correlation matrices or variance inflation factor (VIF) analysis.
+Data Scientist,EDA,Hard,What is exploratory vs confirmatory analysis?,"Exploratory analysis aims to discover patterns without prior assumptions, while confirmatory analysis tests predefined hypotheses."
+Data Scientist,EDA,Medium,Why visualize categorical variables?,"Visualization helps understand frequency distributions, class imbalance, and relationships with target variables."
+Data Scientist,Feature Selection,Medium,What is forward selection?,Forward selection starts with no features and adds one feature at a time based on performance improvement.
+Data Scientist,Feature Selection,Medium,What is backward elimination?,Backward elimination starts with all features and removes the least significant ones iteratively.
+Data Scientist,Feature Selection,Hard,What is L1 regularization for feature selection?,"L1 regularization shrinks some coefficients to zero, effectively selecting a subset of important features."
+Data Scientist,Business Interpretation,Medium,How do you prioritize analytics projects?,"Projects are prioritized based on business impact, feasibility, ROI, data availability, and strategic alignment."
+Data Scientist,Business Interpretation,Hard,How do you communicate uncertainty to non-technical stakeholders?,"By using simple language, visual aids, ranges instead of point estimates, and explaining risks in business terms."
+Data Scientist,Business Interpretation,Medium,What is customer lifetime value (CLV)?,CLV estimates the total revenue a business can expect from a customer over their entire relationship.
+Data Scientist,Business Interpretation,Hard,How do you measure success of a predictive model in business?,"Success is measured using business metrics like revenue increase, cost reduction, risk mitigation, or improved customer satisfaction."
+Data Scientist,Statistics,Hard,What is likelihood ratio test?,Likelihood ratio test compares two nested models to determine whether the more complex model significantly improves fit.
+Data Scientist,Hypothesis Testing,Medium,What is paired t-test?,Paired t-test compares means from the same group at different times or under two conditions.
+Data Scientist,EDA,Medium,Why analyze distributions of target variable?,Understanding target distribution helps choose appropriate models and evaluation metrics.
+Data Scientist,Feature Selection,Hard,What is overfitting due to feature selection?,Overfitting can occur if feature selection is performed using the entire dataset instead of only the training data.
+Data Scientist,Business Interpretation,Medium,What is churn analysis?,Churn analysis identifies customers likely to stop using a product or service to enable retention strategies.
+Data Scientist,Statistics,Medium,What is random variable?,A random variable is a variable whose value depends on the outcome of a random event.
+Data Scientist,Statistics,Medium,What is expected value?,"Expected value is the weighted average of all possible values of a random variable, where weights are their probabilities."
+Data Scientist,Statistics,Hard,What is a sampling frame?,A sampling frame is the list or representation of all elements in the population from which a sample is drawn.
+Data Scientist,Statistics,Medium,What is independence in probability?,Two events are independent if the occurrence of one does not affect the probability of the other.
+Data Scientist,Statistics,Hard,What is bootstrapping in statistics?,Bootstrapping is a resampling technique that estimates the sampling distribution of a statistic by sampling with replacement.
+Data Scientist,Statistics,Medium,What is a quantile?,"A quantile divides data into equal-sized intervals. For example, quartiles divide data into four parts."
+Data Scientist,Hypothesis Testing,Medium,What is significance level (alpha)?,"Significance level is the threshold probability for rejecting the null hypothesis, commonly set at 0.05."
+Data Scientist,Hypothesis Testing,Hard,What is false discovery rate (FDR)?,FDR is the expected proportion of false positives among all rejected hypotheses.
+Data Scientist,Hypothesis Testing,Medium,What is Mann-Whitney U test?,Mann-Whitney U test is a non-parametric test used to compare differences between two independent groups.
+Data Scientist,Hypothesis Testing,Hard,What is power analysis?,Power analysis determines the sample size required to detect an effect of a given size with a desired probability.
+Data Scientist,Hypothesis Testing,Medium,What is confidence level?,Confidence level represents the probability that the confidence interval contains the true population parameter.
+Data Scientist,EDA,Medium,What is a boxplot used for?,A boxplot visualizes the distribution of data using quartiles and highlights potential outliers.
+Data Scientist,EDA,Hard,What is dimensionality curse in EDA?,The curse of dimensionality refers to sparsity and reduced interpretability when analyzing high-dimensional datasets.
+Data Scientist,EDA,Medium,Why check class imbalance during EDA?,"Class imbalance can bias models toward majority classes, affecting evaluation metrics and model fairness."
+Data Scientist,EDA,Hard,What is correlation vs causation?,"Correlation indicates association between variables, while causation implies one variable directly influences another."
+Data Scientist,Feature Selection,Medium,What is feature importance in tree-based models?,Feature importance measures how much each feature contributes to reducing impurity in decision trees.
+Data Scientist,Feature Selection,Hard,What is permutation importance?,Permutation importance measures feature relevance by observing performance degradation when feature values are shuffled.
+Data Scientist,Feature Selection,Medium,What is variance threshold method?,"Variance threshold removes features with low variance, assuming they contain little information."
+Data Scientist,Feature Selection,Hard,Why perform feature selection before modeling?,"Feature selection improves generalization, reduces noise, lowers computational cost, and enhances interpretability."
+Data Scientist,Business Interpretation,Medium,What is conversion rate?,"Conversion rate is the percentage of users who complete a desired action, such as making a purchase."
+Data Scientist,Business Interpretation,Hard,How do you connect statistical results to business KPIs?,"By translating statistical findings into measurable business metrics like revenue growth, customer retention, or cost reduction."
+Data Scientist,Business Interpretation,Medium,What is cohort analysis?,Cohort analysis groups users based on shared characteristics to analyze behavior over time.
+Data Scientist,Business Interpretation,Hard,How do you justify model complexity to stakeholders?,"By demonstrating improved predictive performance, business impact, and explaining trade-offs between interpretability and accuracy."
+Data Scientist,Business Interpretation,Medium,What is segmentation in analytics?,Segmentation divides customers or data into meaningful groups for targeted strategies.
+Data Scientist,Statistics,Hard,What is bias in statistical estimation?,Bias is the systematic difference between an estimator’s expected value and the true population parameter.
+Data Scientist,Statistics,Medium,What is variance in estimation?,Variance measures how much an estimator’s value fluctuates across different samples.
+Full Stack Engineer,Frontend Fundamentals,Easy,What problem does React solve compared to traditional DOM manipulation?,"React abstracts manual DOM updates by using a virtual DOM and declarative rendering, reducing complexity and improving maintainability in dynamic UIs."
+Full Stack Engineer,Frontend Fundamentals,Medium,How does state management impact performance in large React applications?,"Poor state structuring can cause unnecessary re-renders. Proper state isolation, memoization, and lifting state only when necessary improve performance."
+Full Stack Engineer,Frontend Fundamentals,Hard,When would you choose Context API over Redux or vice versa?,"Context API works well for lightweight global state, while Redux is better for complex state logic, predictable updates, middleware support, and debugging."
+Full Stack Engineer,Frontend Fundamentals,Medium,How do you prevent unnecessary re-renders in React?,"By using memoization techniques like React.memo, useMemo, useCallback, and ensuring stable references for props."
+Full Stack Engineer,Frontend Fundamentals,Hard,Explain reconciliation in React and why keys matter.,Reconciliation is React’s diffing algorithm to update the DOM efficiently. Keys help identify elements uniquely to avoid incorrect re-renders.
+Full Stack Engineer,Backend Development,Easy,What is REST and why is it widely used?,"REST is an architectural style based on stateless communication and standard HTTP methods, making APIs scalable and easy to integrate."
+Full Stack Engineer,Backend Development,Medium,What is middleware in backend frameworks?,"Middleware intercepts requests before reaching route handlers, commonly used for logging, authentication, validation, and error handling."
+Full Stack Engineer,Backend Development,Hard,How would you design authentication for a scalable web app?,"Using stateless JWT-based authentication, refresh tokens, secure storage, and role-based access control for scalability."
+Full Stack Engineer,Database Design,Medium,When would you choose SQL over NoSQL?,"SQL is preferred for structured data, strong consistency, and complex queries, while NoSQL suits flexible schemas and high scalability."
+Full Stack Engineer,Database Design,Hard,How does indexing improve query performance?,"Indexes reduce full table scans by providing faster lookup paths, improving read performance at the cost of additional storage and write overhead."
+Full Stack Engineer,System Design Basics,Medium,What is horizontal vs vertical scaling?,"Vertical scaling increases resources of a single machine, while horizontal scaling adds more machines to distribute load."
+Full Stack Engineer,System Design Basics,Hard,How does load balancing improve system reliability?,"Load balancing distributes traffic across multiple servers, preventing overload and improving availability."
+Full Stack Engineer,Web Security,Easy,What is JWT and why is it used?,"JWT is a compact token used for stateless authentication, containing encoded claims verified via signatures."
+Full Stack Engineer,Web Security,Medium,What is XSS and how can it be prevented?,"XSS injects malicious scripts into web pages. Prevention includes input sanitization, output encoding, and Content Security Policy."
+Full Stack Engineer,Web Security,Hard,Explain CSRF and mitigation strategies.,"CSRF tricks authenticated users into unintended actions. Mitigation includes CSRF tokens, SameSite cookies, and verifying origin headers."
+Full Stack Engineer,DevOps Basics,Medium,What is CI/CD and why is it important?,"CI/CD automates testing and deployment, reducing integration issues and enabling faster, reliable releases."
+Full Stack Engineer,DevOps Basics,Hard,Why use Docker in development and production?,"Docker ensures environment consistency, simplifies dependency management, and improves deployment reliability."
+Full Stack Engineer,API Design & Integration,Medium,What makes a good API design?,"Clear resource naming, proper HTTP methods, consistent response formats, versioning, and strong documentation."
+Full Stack Engineer,API Design & Integration,Hard,How do you handle API versioning?,"Using URL versioning, header-based versioning, or semantic versioning to maintain backward compatibility."
+Full Stack Engineer,Performance Optimization,Medium,How can you optimize frontend performance?,"By code splitting, lazy loading, caching assets, reducing bundle size, and minimizing re-renders."
+Full Stack Engineer,Frontend Fundamentals,Medium,"In a large React application, how would you structure state to avoid prop drilling?","By lifting shared state to appropriate parent components, using Context for global concerns, or adopting centralized state management like Redux to avoid deeply nested prop passing."
+Full Stack Engineer,Frontend Fundamentals,Hard,A React app feels slow after adding many components. How would you diagnose performance issues?,"I would use React DevTools profiler to analyze re-renders, check expensive computations, evaluate memoization usage, and inspect network and bundle size impacts."
+Full Stack Engineer,Frontend Fundamentals,Medium,What is the difference between controlled and uncontrolled components?,"Controlled components manage form state via React state, while uncontrolled components rely on DOM references, making controlled components more predictable."
+Full Stack Engineer,Frontend Fundamentals,Hard,How does code splitting improve frontend performance?,"Code splitting loads only required JavaScript chunks on demand, reducing initial bundle size and improving page load time."
+Full Stack Engineer,Backend Development,Medium,How would you design a REST API for a resource with relationships?,"By using nested routes when appropriate, supporting filtering and pagination, and keeping endpoints resource-oriented while avoiding deep nesting."
+Full Stack Engineer,Backend Development,Hard,How do you ensure idempotency in REST APIs?,By designing PUT and DELETE operations to produce the same result regardless of repeated calls and using idempotency keys when needed.
+Full Stack Engineer,Backend Development,Medium,What is rate limiting and why is it important?,Rate limiting restricts the number of requests a client can make within a time frame to prevent abuse and ensure system stability.
+Full Stack Engineer,Database Design,Medium,What is normalization and why is it important?,"Normalization organizes data to reduce redundancy and maintain integrity, improving consistency and reducing anomalies."
+Full Stack Engineer,Database Design,Hard,When would you intentionally denormalize a database?,When optimizing for read-heavy workloads where performance gains outweigh redundancy concerns.
+Full Stack Engineer,Database Design,Hard,How do you handle database migrations in production systems?,"Using version-controlled migration scripts, backward-compatible schema changes, and staged rollouts to avoid downtime."
+Full Stack Engineer,System Design Basics,Medium,What is caching and where can it be applied in a full stack system?,"Caching stores frequently accessed data temporarily to reduce latency, applied at browser, CDN, server, or database levels."
+Full Stack Engineer,System Design Basics,Hard,How would you design a system to handle sudden traffic spikes?,"By implementing auto-scaling, load balancing, caching layers, and using stateless services to scale horizontally."
+Full Stack Engineer,System Design Basics,Medium,What is eventual consistency?,"Eventual consistency means data will become consistent across systems over time, commonly used in distributed systems."
+Full Stack Engineer,Web Security,Medium,How should JWT tokens be securely stored on the client side?,Preferably in HTTP-only secure cookies to mitigate XSS risks rather than localStorage.
+Full Stack Engineer,Web Security,Hard,What is OAuth and when would you use it?,OAuth is an authorization framework allowing third-party apps limited access to user resources without sharing credentials.
+Full Stack Engineer,Web Security,Hard,How do you secure APIs against common attacks?,"By implementing authentication, input validation, HTTPS, rate limiting, logging, and monitoring."
+Full Stack Engineer,DevOps Basics,Medium,What is blue-green deployment?,"Blue-green deployment uses two identical environments where one serves traffic while the other is updated, reducing downtime."
+Full Stack Engineer,DevOps Basics,Hard,How does infrastructure as code improve deployment reliability?,"It automates infrastructure provisioning using version-controlled scripts, ensuring reproducibility and consistency."
+Full Stack Engineer,API Design & Integration,Medium,How do you handle third-party API failures?,"By implementing retries with backoff, circuit breakers, timeouts, and fallback mechanisms."
+Full Stack Engineer,API Design & Integration,Hard,What is HATEOAS in REST?,HATEOAS allows clients to navigate APIs dynamically via hypermedia links provided in responses.
+Full Stack Engineer,Performance Optimization,Medium,How can backend performance be improved?,"Through query optimization, indexing, caching, load balancing, and asynchronous processing."
+Full Stack Engineer,Performance Optimization,Hard,How would you identify a bottleneck in a distributed system?,"By analyzing metrics, logs, tracing requests, monitoring CPU/memory usage, and measuring latency across services."
+Full Stack Engineer,Frontend Fundamentals,Medium,What is hydration in server-side rendering?,"Hydration attaches event listeners to server-rendered HTML, making it interactive on the client side."
+Full Stack Engineer,Backend Development,Hard,What is the difference between synchronous and asynchronous APIs?,"Synchronous APIs block until a response is returned, while asynchronous APIs allow non-blocking execution and improve scalability."
+Full Stack Engineer,Database Design,Medium,What is a composite index?,"A composite index includes multiple columns, improving query performance when filtering on those columns together."
+Full Stack Engineer,System Design Basics,Hard,How does a CDN improve performance?,"A CDN caches static assets across geographically distributed servers, reducing latency and server load."
+Full Stack Engineer,Web Security,Medium,Why enforce HTTPS everywhere?,"HTTPS encrypts communication, protecting data integrity and preventing man-in-the-middle attacks."
+Full Stack Engineer,DevOps Basics,Medium,What is container orchestration?,"Container orchestration manages container deployment, scaling, and networking automatically using tools like Kubernetes."
+Full Stack Engineer,API Design & Integration,Medium,How do you design APIs for backward compatibility?,"By avoiding breaking changes, versioning endpoints, and supporting legacy fields until clients migrate."
+Full Stack Engineer,Performance Optimization,Hard,What is lazy loading and where can it be applied?,"Lazy loading defers loading non-critical resources until needed, applied to images, components, or API data."
+Full Stack Engineer,Frontend Fundamentals,Easy,Why is component reusability important in frontend architecture?,"Reusable components reduce duplication, improve maintainability, and enforce consistent UI and behavior across the application."
+Full Stack Engineer,Frontend Fundamentals,Medium,"In a scenario where global state updates frequently, how would you minimize performance impact?","By splitting state into smaller slices, using selectors, memoization, and avoiding unnecessary subscriptions to prevent full-tree re-renders."
+Full Stack Engineer,Frontend Fundamentals,Hard,What are potential drawbacks of excessive client-side rendering?,"Slower initial load time, SEO limitations, and performance issues on low-powered devices due to heavy JavaScript execution."
+Full Stack Engineer,Backend Development,Medium,What is the difference between stateless and stateful services?,"Stateless services do not store client session data between requests, improving scalability, while stateful services maintain session information."
+Full Stack Engineer,Backend Development,Hard,How would you design a logging strategy for a production backend system?,"By implementing structured logging, centralized log aggregation, log levels, correlation IDs, and monitoring alerts for critical errors."
+Full Stack Engineer,Database Design,Medium,What are database transactions and why are they important?,"Transactions ensure atomicity, consistency, isolation, and durability, maintaining data integrity during concurrent operations."
+Full Stack Engineer,Database Design,Hard,How would you design a database schema for high write throughput?,"By minimizing indexes, optimizing partitioning, using horizontal scaling, and avoiding heavy relational joins."
+Full Stack Engineer,System Design Basics,Medium,What is a message queue and when would you use it?,"A message queue enables asynchronous communication between services, useful for decoupling components and handling background tasks."
+Full Stack Engineer,System Design Basics,Hard,How does microservices architecture improve scalability?,"Microservices allow independent deployment and scaling of individual services, reducing bottlenecks and improving flexibility."
+Full Stack Engineer,Web Security,Medium,What is the principle of least privilege?,It ensures users and systems have only the minimum access necessary to perform required tasks.
+Full Stack Engineer,Web Security,Hard,How do you securely manage secrets in a production system?,"By using environment variables, secret managers, encryption, and restricting access via role-based controls."
+Full Stack Engineer,DevOps Basics,Medium,"What is the purpose of environment separation (dev, staging, production)?",It ensures safe testing and validation before deploying changes to live users.
+Full Stack Engineer,DevOps Basics,Hard,How would you minimize downtime during deployment?,"By using rolling updates, blue-green deployment, health checks, and automated rollback strategies."
+Full Stack Engineer,API Design & Integration,Medium,What is pagination and why is it necessary?,"Pagination limits large result sets into manageable chunks, improving performance and user experience."
+Full Stack Engineer,API Design & Integration,Hard,How do you ensure secure communication between microservices?,"By using HTTPS, mutual TLS authentication, API gateways, and internal network isolation."
+Full Stack Engineer,Performance Optimization,Medium,How does database connection pooling improve performance?,"Connection pooling reuses existing database connections instead of creating new ones for every request, reducing latency."
+Full Stack Engineer,Performance Optimization,Hard,What is backpressure and why is it important?,Backpressure controls data flow between systems to prevent overload and maintain stability in distributed architectures.
+Full Stack Engineer,System Design Basics,Hard,How would you design a URL shortener for scalability?,"By using hash-based unique IDs, distributed databases, caching for frequent lookups, and load-balanced stateless services."
+Full Stack Engineer,Database Design,Medium,What is database sharding?,Sharding distributes data across multiple database instances to improve scalability and performance.
+Full Stack Engineer,Frontend Fundamentals,Medium,Why is accessibility important in frontend development?,Accessibility ensures applications are usable by people with disabilities and improves overall user experience and compliance.
+Full Stack Engineer,Web Security,Medium,What is Content Security Policy (CSP)?,"CSP is a security mechanism that restricts resource loading to trusted sources, mitigating XSS attacks."
+Full Stack Engineer,Backend Development,Medium,What is API gateway and why is it used?,"An API gateway acts as a single entry point for clients, handling routing, authentication, logging, and rate limiting."
+Full Stack Engineer,DevOps Basics,Medium,Why is monitoring important in production systems?,"Monitoring detects issues early, tracks performance metrics, and ensures system reliability."
+Full Stack Engineer,Performance Optimization,Medium,How can HTTP caching improve application performance?,"HTTP caching stores responses in browsers or proxies, reducing repeated network requests and server load."
+Full Stack Engineer,API Design & Integration,Medium,What is idempotency key in APIs?,"An idempotency key ensures that repeated requests produce the same result, preventing duplicate operations."
+Full Stack Engineer,System Design Basics,Medium,What is fault tolerance?,Fault tolerance ensures a system continues functioning even when components fail.
+Full Stack Engineer,Database Design,Hard,How do read replicas improve performance?,"Read replicas distribute read queries across multiple database instances, reducing load on the primary database."
+Full Stack Engineer,Frontend Fundamentals,Hard,How does server-side rendering improve SEO?,"Server-side rendering delivers pre-rendered HTML to search engines, improving crawlability and page indexing."
+Full Stack Engineer,Web Security,Hard,What is token expiration and why is it necessary?,"Token expiration limits the lifespan of authentication tokens, reducing risk if a token is compromised."
+Full Stack Engineer,Frontend Fundamentals,Medium,How do you manage side effects in React applications?,"By using hooks like useEffect to handle asynchronous calls, subscriptions, and cleanup logic while keeping rendering logic pure."
+Full Stack Engineer,Frontend Fundamentals,Hard,"What are trade-offs between CSR, SSR, and SSG?",CSR offers rich interactivity but slower initial load; SSR improves SEO and first paint but adds server overhead; SSG provides fast static delivery but less dynamic flexibility.
+Full Stack Engineer,Backend Development,Medium,How do you design error handling in REST APIs?,"By returning standardized HTTP status codes, structured error responses, meaningful messages, and avoiding sensitive information exposure."
+Full Stack Engineer,Backend Development,Hard,How would you design a multi-tenant backend system?,"By isolating tenant data via separate schemas or tenant IDs, enforcing strict access control, and ensuring scalability through logical partitioning."
+Full Stack Engineer,Database Design,Medium,What are trade-offs between relational and document databases?,"Relational databases provide strong consistency and structured queries, while document databases offer flexible schemas and horizontal scalability."
+Full Stack Engineer,Database Design,Hard,How do you handle database locking in high concurrency systems?,"By using appropriate isolation levels, minimizing transaction duration, and applying optimistic locking where possible."
+Full Stack Engineer,System Design Basics,Medium,What is a reverse proxy and why is it used?,"A reverse proxy forwards client requests to backend servers, improving security, load distribution, and caching."
+Full Stack Engineer,System Design Basics,Hard,How do you design for high availability?,"By eliminating single points of failure, implementing redundancy, load balancing, failover mechanisms, and monitoring."
+Full Stack Engineer,Web Security,Medium,What is role-based access control (RBAC)?,"RBAC restricts system access based on user roles, ensuring users only perform permitted actions."
+Full Stack Engineer,Web Security,Hard,How do you prevent SQL injection attacks?,"By using parameterized queries, prepared statements, input validation, and ORM frameworks."
+Full Stack Engineer,DevOps Basics,Medium,What is rolling deployment?,"Rolling deployment updates instances gradually, reducing downtime and allowing monitoring during rollout."
+Full Stack Engineer,DevOps Basics,Hard,How do you implement automated rollback in CI/CD pipelines?,"By defining health checks, monitoring failure thresholds, and automatically reverting to the previous stable build."
+Full Stack Engineer,API Design & Integration,Medium,What is API throttling?,API throttling limits request rates to maintain stability and prevent abuse.
+Full Stack Engineer,API Design & Integration,Hard,How do you design APIs for mobile-first applications?,"By minimizing payload size, supporting pagination, optimizing response formats, and ensuring low latency."
+Full Stack Engineer,Performance Optimization,Medium,What is tree shaking in frontend builds?,"Tree shaking removes unused code from bundles, reducing application size."
+Full Stack Engineer,Performance Optimization,Hard,How would you analyze slow database queries?,"By reviewing execution plans, checking index usage, analyzing query patterns, and monitoring database metrics."
+Full Stack Engineer,Frontend Fundamentals,Medium,What is the purpose of virtual DOM?,The virtual DOM minimizes direct DOM manipulations by computing diffs and applying efficient updates.
+Full Stack Engineer,Backend Development,Medium,What is stateless authentication?,Stateless authentication verifies user identity using tokens without storing session data on the server.
+Full Stack Engineer,Database Design,Medium,What is ACID in databases?,"ACID ensures reliable transactions through Atomicity, Consistency, Isolation, and Durability."
+Full Stack Engineer,System Design Basics,Medium,What is autoscaling?,Autoscaling automatically adjusts system resources based on traffic demand.
+Full Stack Engineer,Web Security,Medium,What is secure cookie flag?,The secure flag ensures cookies are transmitted only over HTTPS connections.
+Full Stack Engineer,DevOps Basics,Medium,Why use health checks in deployments?,Health checks verify service readiness and prevent routing traffic to unhealthy instances.
+Full Stack Engineer,API Design & Integration,Medium,What is API documentation and why is it critical?,"API documentation defines endpoints, request formats, and responses, enabling smooth integration and reducing errors."
+Full Stack Engineer,Performance Optimization,Medium,How does compression improve performance?,"Compression reduces response payload size, decreasing bandwidth usage and improving load time."
+HR / Behavioural,Leadership,Easy,How would you describe your leadership style?,"My leadership style is collaborative and goal-oriented. I focus on setting clear expectations, empowering team members, and ensuring open communication."
+HR / Behavioural,Leadership,Medium,Describe a time you led a team under pressure.,"I prioritized tasks, clarified roles, and maintained calm communication. By breaking the problem into smaller steps, the team stayed focused and delivered on time."
+HR / Behavioural,Leadership,Hard,How do you handle underperforming team members?,"I first understand the root cause through one-on-one discussions, provide constructive feedback, set measurable goals, and offer support or mentoring."
+HR / Behavioural,Conflict Resolution,Easy,How do you handle disagreements in a team?,"I listen to all perspectives objectively, identify common goals, and facilitate a solution that aligns with project objectives."
+HR / Behavioural,Conflict Resolution,Medium,Describe a conflict you resolved successfully.,"Two team members disagreed on implementation approach. I organized a discussion focusing on data and trade-offs, helping them reach a compromise."
+HR / Behavioural,Conflict Resolution,Hard,How do you handle conflict with your manager?,"I approach respectfully, present facts, understand their perspective, and align on the best solution for the organization."
+HR / Behavioural,Project Explanation,Easy,How do you explain a technical project to a non-technical person?,"I simplify concepts using analogies, focus on business impact, and avoid technical jargon."
+HR / Behavioural,Project Explanation,Medium,How do you present project outcomes to stakeholders?,"I highlight objectives, key metrics, impact, challenges faced, and future improvements."
+HR / Behavioural,Project Explanation,Hard,How do you handle critical questions during a project presentation?,"I stay calm, acknowledge concerns, provide data-backed responses, and admit gaps honestly if needed."
+HR / Behavioural,Failure Handling,Easy,Describe a failure and what you learned.,"I once underestimated project complexity. I learned to plan buffers, assess risks earlier, and communicate expectations clearly."
+HR / Behavioural,Failure Handling,Medium,How do you respond when a project does not meet expectations?,"I analyze root causes, gather feedback, and implement corrective actions while documenting lessons learned."
+HR / Behavioural,Failure Handling,Hard,How do you maintain morale after failure?,"I focus on learning opportunities, celebrate small wins, and reinforce the team’s strengths."
+HR / Behavioural,Strength/Weakness,Easy,What is your biggest strength?,My biggest strength is adaptability. I quickly learn new technologies and adjust to changing environments.
+HR / Behavioural,Strength/Weakness,Medium,What is your weakness?,"I used to take on too many tasks myself, but I am improving by delegating effectively."
+HR / Behavioural,Strength/Weakness,Hard,How do you turn weaknesses into strengths?,"I identify gaps through feedback, create improvement plans, track progress, and actively practice new behaviors."
+HR / Behavioural,Leadership,Medium,How do you motivate a team?,"By recognizing contributions, setting clear goals, and creating an environment of trust and growth."
+HR / Behavioural,Leadership,Hard,How do you make difficult decisions?,"I evaluate data, consider long-term impact, consult stakeholders, and align decisions with company goals."
+HR / Behavioural,Conflict Resolution,Medium,How do you handle cultural differences in teams?,"I promote inclusivity, encourage open communication, and respect diverse perspectives."
+HR / Behavioural,Project Explanation,Medium,How do you prioritize tasks in a project?,"I assess urgency, impact, dependencies, and available resources before creating a structured roadmap."
+HR / Behavioural,Failure Handling,Medium,How do you handle criticism?,I view criticism as constructive feedback and use it to improve my performance.
+HR / Behavioural,Strength/Weakness,Medium,How do colleagues describe you?,"They describe me as reliable, proactive, and solution-oriented."
+HR / Behavioural,Leadership,Easy,Have you mentored someone?,"Yes, I have guided peers by sharing knowledge, providing feedback, and helping them overcome challenges."
+HR / Behavioural,Conflict Resolution,Hard,How do you manage conflict between departments?,I align discussions around shared organizational goals and encourage collaborative problem-solving.
+HR / Behavioural,Project Explanation,Hard,How do you measure project success?,"Project success is measured by meeting objectives, stakeholder satisfaction, timeline adherence, and business impact."
+HR / Behavioural,Failure Handling,Hard,Have you ever taken responsibility for a team mistake?,"Yes, as a leader I take ownership publicly and address improvements internally to protect team morale."
+HR / Behavioural,Leadership,Medium,How do you delegate tasks effectively?,"I assess team members’ strengths, clearly define expectations, provide necessary resources, and follow up without micromanaging."
+HR / Behavioural,Leadership,Hard,Describe a time you influenced others without authority.,"I presented data-driven insights and aligned the proposal with shared goals, gaining consensus through collaboration rather than hierarchy."
+HR / Behavioural,Leadership,Medium,How do you handle team burnout?,"I monitor workload distribution, encourage breaks, adjust timelines when possible, and promote open communication about stress."
+HR / Behavioural,Conflict Resolution,Medium,What steps do you take before escalating a conflict?,"I attempt direct communication, clarify misunderstandings, and propose compromises before involving higher management."
+HR / Behavioural,Conflict Resolution,Hard,How do you resolve conflicts caused by miscommunication?,"I clarify expectations, restate each party’s understanding, and document agreements to prevent future misunderstandings."
+HR / Behavioural,Project Explanation,Medium,How do you explain trade-offs in a project?,"I present options with pros and cons, quantify risks and benefits, and relate them to business priorities."
+HR / Behavioural,Project Explanation,Hard,How do you handle scope creep?,"I evaluate impact on timeline and resources, communicate trade-offs clearly, and align changes with stakeholders before proceeding."
+HR / Behavioural,Failure Handling,Medium,How do you recover from a missed deadline?,"I communicate transparently, reassess timelines, prioritize critical tasks, and implement preventive measures."
+HR / Behavioural,Failure Handling,Hard,How do you deal with repeated failures?,"I conduct deeper root cause analysis, seek mentorship or additional resources, and adjust strategy based on learnings."
+HR / Behavioural,Strength/Weakness,Medium,What professional skill are you currently improving?,I am improving my time management by using structured planning tools and prioritization frameworks.
+HR / Behavioural,Strength/Weakness,Hard,How do you ensure your strengths do not become weaknesses?,I seek regular feedback and balance my strengths with awareness to avoid over-reliance or blind spots.
+HR / Behavioural,Leadership,Medium,How do you build trust within a team?,"By being transparent, consistent, accountable, and supportive in decision-making."
+HR / Behavioural,Leadership,Hard,How do you lead when you lack full information?,"I gather available data, consult experts, assess risks, and make informed decisions while remaining adaptable."
+HR / Behavioural,Conflict Resolution,Medium,How do you handle personality clashes?,"I focus on shared objectives, encourage professionalism, and mediate with empathy."
+HR / Behavioural,Project Explanation,Medium,How do you justify project delays?,"I explain root causes, mitigation steps taken, and revised plans to meet objectives."
+HR / Behavioural,Project Explanation,Hard,How do you explain a failed project outcome?,"I focus on lessons learned, accountability, and improvements implemented for future success."
+HR / Behavioural,Failure Handling,Medium,How do you handle risk in projects?,"I identify risks early, prioritize them by impact, and prepare mitigation strategies."
+HR / Behavioural,Failure Handling,Hard,Describe a time you made a difficult mistake.,"I once misjudged resource allocation, learned to validate assumptions earlier, and improved planning accuracy."
+HR / Behavioural,Strength/Weakness,Medium,How do you handle feedback from peers?,"I listen actively, reflect objectively, and implement actionable improvements."
+HR / Behavioural,Strength/Weakness,Hard,What differentiates you from other candidates?,"My combination of technical competence, adaptability, and strong communication skills differentiates me."
+HR / Behavioural,Leadership,Medium,How do you manage remote teams?,"By ensuring clear communication, regular check-ins, and using collaboration tools effectively."
+HR / Behavioural,Conflict Resolution,Hard,How do you deal with passive-aggressive behavior?,"I address issues directly but respectfully, encourage open dialogue, and clarify expectations."
+HR / Behavioural,Project Explanation,Medium,How do you document project progress?,"I maintain structured reports with milestones, KPIs, and risk updates."
+HR / Behavioural,Failure Handling,Medium,How do you stay resilient during setbacks?,"I focus on problem-solving, maintain perspective, and remind myself of long-term goals."
+HR / Behavioural,Strength/Weakness,Medium,How do you leverage your strengths in a team?,I align my strengths with team needs while supporting others where required.
+HR / Behavioural,Leadership,Medium,How do you set goals for your team?,I set SMART goals aligned with organizational objectives and ensure clarity on deliverables and timelines.
+HR / Behavioural,Leadership,Hard,Describe a time you had to lead change.,"I communicated the vision clearly, addressed concerns proactively, and involved stakeholders to ensure smooth transition."
+HR / Behavioural,Leadership,Medium,How do you ensure accountability?,"By setting clear expectations, tracking progress transparently, and providing regular feedback."
+HR / Behavioural,Conflict Resolution,Medium,How do you prevent conflicts in a team?,"By fostering open communication, clarifying roles, and setting shared expectations early."
+HR / Behavioural,Conflict Resolution,Hard,How do you handle conflicts arising from performance differences?,"I focus on constructive feedback, skill development, and fair workload distribution."
+HR / Behavioural,Project Explanation,Medium,How do you structure a project explanation in interviews?,"I follow a structured approach: problem statement, solution design, implementation, challenges, results, and impact."
+HR / Behavioural,Project Explanation,Hard,How do you explain technical trade-offs to business leaders?,"I translate technical details into business risks, cost implications, and scalability considerations."
+HR / Behavioural,Failure Handling,Medium,How do you deal with tight deadlines?,"I prioritize high-impact tasks, delegate effectively, and maintain clear communication."
+HR / Behavioural,Failure Handling,Hard,Describe a situation where you failed publicly.,"I accepted responsibility, addressed stakeholders transparently, and implemented corrective measures."
+HR / Behavioural,Strength/Weakness,Medium,How do you identify your strengths?,"Through feedback, performance reviews, and reflecting on tasks where I consistently excel."
+HR / Behavioural,Strength/Weakness,Hard,How do you respond when your weakness impacts performance?,"I acknowledge it, create a focused improvement plan, and seek guidance or training."
+HR / Behavioural,Leadership,Medium,How do you encourage innovation in your team?,By creating a safe environment for experimentation and recognizing creative efforts.
+HR / Behavioural,Leadership,Hard,How do you balance authority and empathy?,I maintain clear standards while actively listening and understanding team concerns.
+HR / Behavioural,Conflict Resolution,Medium,How do you resolve conflicts in virtual teams?,"I ensure clarity through documentation, encourage video discussions, and confirm mutual understanding."
+HR / Behavioural,Project Explanation,Medium,How do you quantify project impact?,"By using measurable KPIs such as revenue growth, cost reduction, efficiency gains, or user engagement metrics."
+HR / Behavioural,Project Explanation,Hard,How do you defend your project decisions?,"By backing decisions with data, aligning them with objectives, and acknowledging alternative approaches."
+HR / Behavioural,Failure Handling,Medium,How do you learn from mistakes?,"I analyze root causes, document lessons learned, and apply improvements in future tasks."
+HR / Behavioural,Failure Handling,Hard,How do you handle fear of failure?,"I focus on preparation, risk assessment, and viewing challenges as learning opportunities."
+HR / Behavioural,Strength/Weakness,Medium,What is a strength you rely on most?,Problem-solving under pressure is a strength I rely on frequently.
+HR / Behavioural,Strength/Weakness,Hard,How do you avoid overconfidence in your strengths?,By seeking diverse perspectives and continuously evaluating performance objectively.
+HR / Behavioural,Leadership,Medium,How do you build long-term team engagement?,"By promoting growth opportunities, recognizing contributions, and fostering collaboration."
+HR / Behavioural,Conflict Resolution,Hard,Describe a time when compromise was necessary.,I negotiated a middle ground solution balancing technical feasibility and stakeholder expectations.
+HR / Behavioural,Project Explanation,Medium,How do you explain challenges faced during a project?,"I describe the issue, root cause, mitigation strategy, and lessons learned."
+HR / Behavioural,Failure Handling,Medium,How do you manage stress during critical phases?,"I break tasks into manageable steps, maintain focus, and ensure proper time management."
+HR / Behavioural,Strength/Weakness,Medium,How do you continue self-improvement?,"Through continuous learning, feedback, and setting personal development goals."
+HR / Behavioural,Leadership,Medium,How do you handle leading peers who are more experienced than you?,"I show respect for their expertise, encourage collaboration, and focus on aligning everyone toward shared goals."
+HR / Behavioural,Leadership,Hard,How do you lead during uncertainty?,"I communicate transparently about what is known and unknown, provide direction based on available information, and remain adaptable."
+HR / Behavioural,Leadership,Medium,How do you give constructive feedback?,"I provide specific examples, focus on behavior rather than personality, and suggest actionable improvements."
+HR / Behavioural,Conflict Resolution,Medium,How do you respond when someone disagrees strongly with your idea?,"I listen carefully, ask clarifying questions, and evaluate their perspective objectively before making a decision."
+HR / Behavioural,Conflict Resolution,Hard,How do you manage conflicts when emotions are involved?,"I remain calm, acknowledge emotions, refocus the discussion on facts, and work toward a solution collaboratively."
+HR / Behavioural,Project Explanation,Medium,How do you explain your role in a team project?,"I clarify my responsibilities, contributions, decisions made, and how my work impacted overall success."
+HR / Behavioural,Project Explanation,Hard,How do you handle being questioned about a project gap?,"I acknowledge the gap honestly, explain context, and discuss steps taken to address it."
+HR / Behavioural,Failure Handling,Medium,How do you react to unexpected setbacks?,"I reassess priorities, adjust strategy quickly, and communicate updates to stakeholders."
+HR / Behavioural,Failure Handling,Hard,Describe a time when you had to rebuild trust after a mistake.,"I admitted the mistake openly, implemented corrective measures, and consistently demonstrated reliability afterward."
+HR / Behavioural,Strength/Weakness,Medium,How do you ensure your weaknesses do not affect team performance?,I compensate by collaborating with others who complement my skills and continuously improving myself.
+HR / Behavioural,Strength/Weakness,Hard,What weakness are you actively working on right now?,I am improving delegation by trusting team members more and focusing on strategic tasks.
+HR / Behavioural,Leadership,Medium,How do you celebrate team success?,I recognize contributions publicly and reflect on achievements to reinforce motivation.
+HR / Behavioural,Leadership,Hard,How do you ensure fairness in decision-making?,"I base decisions on objective criteria, data, and open discussion rather than personal bias."
+HR / Behavioural,Conflict Resolution,Medium,How do you handle conflicts caused by unclear expectations?,"I clarify roles, responsibilities, and deliverables early to prevent misunderstandings."
+HR / Behavioural,Project Explanation,Medium,How do you explain a complex project timeline?,"I break it into milestones, highlight dependencies, and explain critical paths clearly."
+HR / Behavioural,Project Explanation,Hard,How do you justify resource allocation decisions?,"I align resource allocation with project priorities, expected ROI, and organizational strategy."
+HR / Behavioural,Failure Handling,Medium,How do you prevent repeating past mistakes?,I document lessons learned and integrate process improvements into future workflows.
+HR / Behavioural,Failure Handling,Hard,How do you handle public criticism from leadership?,"I remain professional, clarify misunderstandings if needed, and focus on improving outcomes."
+HR / Behavioural,Strength/Weakness,Medium,What is a strength that helps you in teamwork?,Active listening helps me understand diverse perspectives and collaborate effectively.
+HR / Behavioural,Strength/Weakness,Hard,How do you maintain humility despite achievements?,I view achievements as team efforts and continuously seek feedback for improvement.
+HR / Behavioural,Leadership,Medium,How do you adapt your leadership style to different team members?,I adjust communication and management approaches based on individual strengths and working styles.
+HR / Behavioural,Conflict Resolution,Hard,How do you resolve conflicts when deadlines are near?,"I focus discussions on immediate deliverables, postpone non-critical issues, and align the team on urgent priorities."
+HR / Behavioural,Project Explanation,Medium,How do you ensure transparency in projects?,"By maintaining clear documentation, regular updates, and open communication channels."
+HR / Behavioural,Failure Handling,Medium,How do you balance accountability and optimism after failure?,I acknowledge responsibility while encouraging forward-looking problem-solving.
+HR / Behavioural,Strength/Weakness,Medium,How do you align personal strengths with company goals?,I identify how my skills can directly contribute to organizational objectives and focus efforts accordingly.
+Machine Learning Engineer,Supervised Learning,Easy,What is supervised learning?,"Supervised learning is a machine learning paradigm where models are trained on labeled data. Each training example includes input features and a corresponding output label, allowing the model to learn a mapping function from inputs to outputs."
+Machine Learning Engineer,Supervised Learning,Easy,What is the difference between regression and classification?,"Regression predicts continuous numerical values, such as house prices, while classification predicts discrete categories, such as spam or not spam."
+Machine Learning Engineer,Supervised Learning,Medium,What assumptions does linear regression make?,"Linear regression assumes linearity between features and target, independence of errors, homoscedasticity (constant variance of errors), normal distribution of residuals, and no multicollinearity among predictors."
+Machine Learning Engineer,Supervised Learning,Medium,What is bias-variance tradeoff?,"The bias-variance tradeoff describes the balance between underfitting (high bias) and overfitting (high variance). Increasing model complexity reduces bias but increases variance, and vice versa."
+Machine Learning Engineer,Unsupervised Learning,Easy,What is unsupervised learning?,Unsupervised learning is a type of machine learning where the model is trained on unlabeled data and aims to discover hidden patterns or structures in the data.
+Machine Learning Engineer,Unsupervised Learning,Medium,What is the objective of K-Means clustering?,K-Means aims to partition data into K clusters by minimizing the within-cluster sum of squared distances between points and their assigned cluster centroids.
+Machine Learning Engineer,Unsupervised Learning,Medium,What are the limitations of K-Means?,"K-Means assumes spherical clusters, requires predefining K, is sensitive to initialization, and performs poorly with clusters of varying density or non-globular shapes."
+Machine Learning Engineer,Model Evaluation,Easy,What is accuracy?,Accuracy is the proportion of correctly predicted instances out of the total instances. It is suitable when classes are balanced.
+Machine Learning Engineer,Model Evaluation,Medium,When is accuracy not a good metric?,Accuracy is misleading when dealing with imbalanced datasets because a model can achieve high accuracy by predicting the majority class most of the time.
+Machine Learning Engineer,Model Evaluation,Medium,What is precision and recall?,"Precision measures how many predicted positives are actually positive, while recall measures how many actual positives were correctly identified by the model."
+Machine Learning Engineer,Model Evaluation,Medium,What is F1-score?,F1-score is the harmonic mean of precision and recall. It balances both metrics and is useful when there is class imbalance.
+Machine Learning Engineer,Model Evaluation,Hard,What is ROC-AUC?,ROC-AUC measures the model's ability to distinguish between classes across different classification thresholds. It plots True Positive Rate against False Positive Rate and computes the area under the curve.
+Machine Learning Engineer,Overfitting / Regularization,Easy,What is overfitting?,"Overfitting occurs when a model learns noise and patterns specific to the training data, leading to poor generalization on unseen data."
+Machine Learning Engineer,Overfitting / Regularization,Medium,How can you detect overfitting?,Overfitting is detected when training performance is high but validation or test performance is significantly lower.
+Machine Learning Engineer,Overfitting / Regularization,Medium,What is regularization?,Regularization is a technique used to prevent overfitting by adding a penalty term to the loss function to constrain model complexity.
+Machine Learning Engineer,Overfitting / Regularization,Medium,What is L1 regularization?,"L1 regularization adds the absolute value of coefficients to the loss function, encouraging sparsity and feature selection."
+Machine Learning Engineer,Overfitting / Regularization,Medium,What is L2 regularization?,"L2 regularization adds the squared value of coefficients to the loss function, reducing large weights but not forcing them to zero."
+Machine Learning Engineer,Feature Engineering,Easy,What is feature engineering?,Feature engineering is the process of transforming raw data into meaningful features that improve model performance.
+Machine Learning Engineer,Feature Engineering,Medium,Why is feature scaling important?,Feature scaling ensures that features with different ranges do not disproportionately influence distance-based or gradient-based algorithms.
+Machine Learning Engineer,Feature Engineering,Medium,What is one-hot encoding?,"One-hot encoding converts categorical variables into binary vectors, allowing models to process categorical data numerically."
+Machine Learning Engineer,Feature Engineering,Medium,What is target encoding?,"Target encoding replaces categorical values with the mean target value for that category, often used in high-cardinality categorical features."
+Machine Learning Engineer,Deployment Basics,Easy,What does model deployment mean?,Model deployment refers to integrating a trained machine learning model into a production environment where it can make predictions on real-world data.
+Machine Learning Engineer,Deployment Basics,Medium,What is the difference between batch and real-time inference?,"Batch inference processes large volumes of data at scheduled intervals, while real-time inference provides predictions instantly upon request."
+Machine Learning Engineer,Deployment Basics,Medium,What is model drift?,"Model drift occurs when the statistical properties of input data change over time, reducing model performance."
+Machine Learning Engineer,Supervised Learning,Medium,What is logistic regression and why is it used for classification?,"Logistic regression is a linear model used for binary classification. It applies the sigmoid function to map linear outputs into probabilities between 0 and 1, making it suitable for predicting class membership."
+Machine Learning Engineer,Supervised Learning,Medium,How does a decision tree work?,A decision tree splits data recursively based on feature values to minimize impurity (like Gini or entropy). Each split partitions the data to improve homogeneity in the resulting subsets.
+Machine Learning Engineer,Supervised Learning,Hard,What is entropy in decision trees?,Entropy measures the impurity or disorder in a dataset. Lower entropy means more homogeneous data. Decision trees aim to reduce entropy after each split.
+Machine Learning Engineer,Supervised Learning,Hard,What is gradient boosting?,"Gradient boosting is an ensemble technique that builds models sequentially, where each new model corrects errors made by previous models by minimizing a loss function using gradient descent."
+Machine Learning Engineer,Supervised Learning,Medium,What is cross-validation?,Cross-validation is a technique for evaluating model performance by splitting data into multiple folds and training/testing the model multiple times to reduce variance in performance estimates.
+Machine Learning Engineer,Unsupervised Learning,Medium,What is hierarchical clustering?,Hierarchical clustering builds a tree-like structure (dendrogram) by iteratively merging or splitting clusters based on distance metrics.
+Machine Learning Engineer,Unsupervised Learning,Hard,What is DBSCAN?,DBSCAN is a density-based clustering algorithm that groups points close to each other while marking low-density points as outliers. It does not require specifying the number of clusters.
+Machine Learning Engineer,Unsupervised Learning,Medium,What is Principal Component Analysis (PCA)?,PCA is a dimensionality reduction technique that transforms features into orthogonal components capturing maximum variance in the data.
+Machine Learning Engineer,Model Evaluation,Medium,What is a confusion matrix?,"A confusion matrix is a table that summarizes classification performance by showing true positives, false positives, true negatives, and false negatives."
+Machine Learning Engineer,Model Evaluation,Hard,What is log loss?,Log loss measures the performance of a classification model by penalizing incorrect predictions with high confidence more severely. It evaluates probability outputs rather than hard predictions.
+Machine Learning Engineer,Model Evaluation,Hard,What is Cohen’s Kappa?,Cohen’s Kappa measures agreement between predicted and actual labels while accounting for chance agreement.
+Machine Learning Engineer,Model Evaluation,Medium,What is mean squared error (MSE)?,MSE is the average squared difference between predicted and actual values in regression problems. It penalizes larger errors more heavily.
+Machine Learning Engineer,Overfitting / Regularization,Medium,How does dropout prevent overfitting?,"Dropout randomly disables a fraction of neurons during training, preventing the network from relying too heavily on specific neurons and improving generalization."
+Machine Learning Engineer,Overfitting / Regularization,Hard,What is early stopping?,"Early stopping halts training when validation performance stops improving, preventing the model from overfitting the training data."
+Machine Learning Engineer,Overfitting / Regularization,Medium,What is data augmentation?,"Data augmentation artificially increases training data size by applying transformations like rotation, flipping, or noise addition to improve generalization."
+Machine Learning Engineer,Feature Engineering,Medium,What is feature selection?,Feature selection is the process of identifying and retaining the most relevant features to improve model performance and reduce overfitting.
+Machine Learning Engineer,Feature Engineering,Hard,What is multicollinearity?,"Multicollinearity occurs when two or more features are highly correlated, making coefficient estimates unstable in linear models."
+Machine Learning Engineer,Feature Engineering,Medium,What is normalization vs standardization?,"Normalization scales features to a fixed range (usually 0 to 1), while standardization rescales features to have zero mean and unit variance."
+Machine Learning Engineer,Deployment Basics,Medium,What is model versioning?,Model versioning tracks different versions of trained models to ensure reproducibility and enable rollback if performance degrades.
+Machine Learning Engineer,Deployment Basics,Hard,What is A/B testing in ML deployment?,A/B testing compares two model versions in production by routing traffic between them to evaluate performance differences using real user data.
+Machine Learning Engineer,Deployment Basics,Medium,What is latency in model serving?,Latency refers to the time taken by a model to generate a prediction after receiving an input request.
+Machine Learning Engineer,Deployment Basics,Hard,What is CI/CD in ML?,"CI/CD in ML (MLOps) automates testing, integration, and deployment of models to ensure reliable and reproducible production pipelines."
+Machine Learning Engineer,Supervised Learning,Hard,What is the difference between bagging and boosting?,"Bagging trains models independently on bootstrapped samples and averages predictions to reduce variance, while boosting trains models sequentially to reduce bias."
+Machine Learning Engineer,Supervised Learning,Medium,What is Support Vector Machine (SVM)?,SVM is a supervised learning algorithm that finds the optimal hyperplane that maximizes the margin between classes. It can also use kernel tricks to handle non-linear boundaries.
+Machine Learning Engineer,Supervised Learning,Hard,What is the kernel trick in SVM?,"The kernel trick maps input data into higher-dimensional space without explicitly computing the transformation, enabling SVM to create non-linear decision boundaries."
+Machine Learning Engineer,Supervised Learning,Medium,What is Naive Bayes and why is it called naive?,"Naive Bayes is a probabilistic classifier based on Bayes’ theorem. It is called naive because it assumes independence among features, which is rarely true in practice."
+Machine Learning Engineer,Supervised Learning,Hard,What is XGBoost and why is it popular?,"XGBoost is an optimized gradient boosting algorithm known for speed, scalability, regularization support, and strong performance on structured/tabular datasets."
+Machine Learning Engineer,Supervised Learning,Medium,What is the difference between parametric and non-parametric models?,"Parametric models assume a fixed number of parameters regardless of dataset size, while non-parametric models can grow in complexity as the dataset increases."
+Machine Learning Engineer,Unsupervised Learning,Medium,What is dimensionality reduction?,"Dimensionality reduction reduces the number of input features while preserving important information, improving efficiency and sometimes model performance."
+Machine Learning Engineer,Unsupervised Learning,Hard,What is t-SNE used for?,t-SNE is primarily used for visualizing high-dimensional data in 2D or 3D while preserving local structure.
+Machine Learning Engineer,Unsupervised Learning,Hard,What is the curse of dimensionality?,"The curse of dimensionality refers to issues that arise when analyzing data in high-dimensional spaces, where data becomes sparse and distance metrics lose meaning."
+Machine Learning Engineer,Model Evaluation,Medium,What is R-squared?,R-squared measures the proportion of variance in the dependent variable explained by the independent variables in a regression model.
+Machine Learning Engineer,Model Evaluation,Hard,What is adjusted R-squared?,Adjusted R-squared adjusts the R-squared value by penalizing the inclusion of unnecessary predictors in the model.
+Machine Learning Engineer,Model Evaluation,Medium,What is MAE?,"Mean Absolute Error (MAE) is the average absolute difference between predicted and actual values, less sensitive to outliers than MSE."
+Machine Learning Engineer,Model Evaluation,Hard,What is calibration in classification models?,Calibration measures how well predicted probabilities reflect true outcome probabilities.
+Machine Learning Engineer,Overfitting / Regularization,Medium,What is Ridge regression?,"Ridge regression applies L2 regularization to linear regression, shrinking coefficients to reduce overfitting."
+Machine Learning Engineer,Overfitting / Regularization,Medium,What is Lasso regression?,"Lasso regression applies L1 regularization, encouraging sparsity by forcing some coefficients to become zero."
+Machine Learning Engineer,Overfitting / Regularization,Hard,What is Elastic Net?,"Elastic Net combines L1 and L2 regularization, balancing feature selection and coefficient shrinkage."
+Machine Learning Engineer,Feature Engineering,Medium,What is polynomial feature expansion?,Polynomial feature expansion creates interaction and higher-degree terms to allow linear models to capture non-linear relationships.
+Machine Learning Engineer,Feature Engineering,Hard,What is feature importance?,"Feature importance measures how much each feature contributes to the model’s predictions, often derived from tree-based models."
+Machine Learning Engineer,Feature Engineering,Medium,What is data leakage?,"Data leakage occurs when information from the test set or future data is used during training, leading to overly optimistic performance estimates."
+Machine Learning Engineer,Deployment Basics,Medium,What is a REST API in ML deployment?,A REST API exposes a model endpoint that allows external systems to send input data and receive predictions via HTTP requests.
+Machine Learning Engineer,Deployment Basics,Hard,What is containerization in ML?,"Containerization packages the model, dependencies, and environment into a container (e.g., Docker) to ensure consistent deployment across systems."
+Machine Learning Engineer,Deployment Basics,Hard,What is monitoring in production ML systems?,"Monitoring tracks metrics such as accuracy, latency, drift, and resource usage to ensure model reliability and detect degradation."
+Machine Learning Engineer,Supervised Learning,Easy,What is k-Nearest Neighbors (kNN)?,kNN is a non-parametric algorithm that classifies or predicts a data point based on the majority label or average value of its k closest neighbors.
+Machine Learning Engineer,Supervised Learning,Medium,How do you choose the value of k in kNN?,"The value of k is typically chosen using cross-validation. Smaller k can lead to overfitting, while larger k can smooth the decision boundary and risk underfitting."
+Machine Learning Engineer,Supervised Learning,Hard,What is class imbalance and how do you handle it?,"Class imbalance occurs when one class significantly outnumbers others. It can be handled using resampling techniques, class weights, synthetic data generation like SMOTE, or appropriate evaluation metrics."
+Machine Learning Engineer,Supervised Learning,Hard,What is stacking in ensemble learning?,Stacking is an ensemble technique where multiple base models are trained and their outputs are used as input features for a meta-model to improve overall performance.
+Machine Learning Engineer,Unsupervised Learning,Medium,What is anomaly detection?,Anomaly detection identifies rare or unusual patterns in data that differ significantly from the majority of observations.
+Machine Learning Engineer,Unsupervised Learning,Hard,What is Isolation Forest?,Isolation Forest is an anomaly detection algorithm that isolates anomalies by randomly partitioning data using decision trees.
+Machine Learning Engineer,Unsupervised Learning,Medium,What is silhouette score?,"Silhouette score measures how similar a data point is to its own cluster compared to other clusters, ranging from -1 to 1."
+Machine Learning Engineer,Model Evaluation,Medium,What is stratified sampling?,Stratified sampling ensures that each class is proportionally represented in both training and test datasets.
+Machine Learning Engineer,Model Evaluation,Hard,What is time-series cross-validation?,Time-series cross-validation preserves temporal order by training on past data and validating on future data to prevent data leakage.
+Machine Learning Engineer,Model Evaluation,Medium,What is a learning curve?,A learning curve plots training and validation performance against training dataset size to diagnose bias and variance issues.
+Machine Learning Engineer,Overfitting / Regularization,Medium,What is weight decay?,"Weight decay is another term for L2 regularization, penalizing large weights during model training."
+Machine Learning Engineer,Overfitting / Regularization,Hard,How does batch normalization help generalization?,"Batch normalization stabilizes and accelerates training by normalizing layer inputs, sometimes providing slight regularization effects."
+Machine Learning Engineer,Feature Engineering,Medium,What is feature hashing?,"Feature hashing maps categorical variables into fixed-length numerical vectors using hash functions, reducing memory usage."
+Machine Learning Engineer,Feature Engineering,Hard,What is interaction feature?,"Interaction features represent the combined effect of two or more features, capturing relationships not represented individually."
+Machine Learning Engineer,Deployment Basics,Hard,What is canary deployment?,Canary deployment gradually rolls out a new model to a small subset of users before full deployment to reduce risk.
+Machine Learning Engineer,Deployment Basics,Medium,What is model reproducibility?,"Model reproducibility ensures that the same model can be recreated with identical performance using the same data, code, and parameters."
+Machine Learning Engineer,Supervised Learning,Medium,What is gradient descent?,Gradient descent is an optimization algorithm that minimizes a loss function by iteratively updating parameters in the direction of the negative gradient.
+Machine Learning Engineer,Supervised Learning,Hard,What is stochastic gradient descent (SGD)?,"SGD updates model parameters using one training example at a time, making it faster and more scalable for large datasets."
+Machine Learning Engineer,Model Evaluation,Hard,What is precision-recall curve?,A precision-recall curve plots precision against recall at different thresholds and is particularly useful for imbalanced datasets.
+Machine Learning Engineer,Supervised Learning,Hard,What is the difference between generative and discriminative models?,"Generative models learn the joint probability distribution P(X, Y) and can generate new data points, while discriminative models learn the conditional probability P(Y|X) or decision boundary directly to classify data."
+Machine Learning Engineer,Supervised Learning,Medium,What is multi-class classification and how is it handled?,Multi-class classification involves predicting one label among more than two classes. It can be handled using algorithms that inherently support multi-class outputs or strategies like one-vs-rest and one-vs-one.
+Machine Learning Engineer,Supervised Learning,Hard,What is multi-label classification?,"Multi-label classification allows each instance to belong to multiple classes simultaneously, unlike multi-class classification where each instance belongs to only one class."
+Machine Learning Engineer,Model Evaluation,Hard,What is macro vs micro averaging in evaluation metrics?,"Macro averaging computes metrics independently for each class and then averages them, giving equal weight to all classes. Micro averaging aggregates contributions of all classes before computing the metric, favoring larger classes."
+Machine Learning Engineer,Model Evaluation,Medium,What is bootstrapping in model evaluation?,Bootstrapping is a resampling technique that repeatedly samples with replacement from the dataset to estimate the distribution of a performance metric.
+Machine Learning Engineer,Overfitting / Regularization,Medium,How does increasing training data help reduce overfitting?,"Increasing training data provides more representative patterns of the underlying distribution, reducing the model’s tendency to memorize noise."
+Machine Learning Engineer,Overfitting / Regularization,Hard,What is variance inflation factor (VIF)?,VIF measures how much the variance of a regression coefficient increases due to multicollinearity. High VIF indicates strong correlation between predictors.
+Machine Learning Engineer,Feature Engineering,Medium,What is binning in feature engineering?,Binning groups continuous variables into discrete intervals to reduce noise and sometimes improve interpretability.
+Machine Learning Engineer,Feature Engineering,Hard,What is concept drift?,"Concept drift occurs when the relationship between input features and target variable changes over time, requiring model retraining."
+Machine Learning Engineer,Deployment Basics,Medium,What is model serialization?,"Model serialization is the process of saving a trained model to disk (e.g., using pickle or joblib) so it can be loaded later for inference."
+Machine Learning Engineer,Deployment Basics,Hard,What is feature store in MLOps?,"A feature store is a centralized repository that stores, manages, and serves features consistently for both training and inference pipelines."
+Machine Learning Engineer,Unsupervised Learning,Hard,What is autoencoder used for?,"Autoencoders are neural networks used for dimensionality reduction, anomaly detection, or feature learning by encoding input into a compressed representation and reconstructing it."
+Software Engineer,OOPS,Easy,What are the four pillars of OOPS?,"The four pillars of OOPS are encapsulation, abstraction, inheritance, and polymorphism."
+Software Engineer,OOPS,Easy,What is encapsulation?,"Encapsulation is the bundling of data and methods that operate on that data within a single unit, typically a class, while restricting direct access to some components."
+Software Engineer,OOPS,Medium,What is abstraction?,Abstraction hides implementation details and exposes only the essential features of an object.
+Software Engineer,OOPS,Medium,What is polymorphism?,"Polymorphism allows objects of different classes to be treated as objects of a common superclass, enabling the same interface to be used for different implementations."
+Software Engineer,OOPS,Hard,What is the difference between overloading and overriding?,"Overloading occurs when multiple methods share the same name but differ in parameters, while overriding occurs when a subclass provides a specific implementation of a method already defined in its parent class."
+Software Engineer,DBMS,Easy,What is a database?,A database is an organized collection of structured data stored electronically and managed by a DBMS.
+Software Engineer,DBMS,Medium,What is normalization?,Normalization is the process of organizing data to reduce redundancy and improve data integrity.
+Software Engineer,DBMS,Hard,What are ACID properties?,"ACID stands for Atomicity, Consistency, Isolation, and Durability, ensuring reliable database transactions."
+Software Engineer,DBMS,Medium,What is indexing?,Indexing improves query performance by creating a data structure that allows faster retrieval of records.
+Software Engineer,OS,Easy,What is an operating system?,An operating system manages hardware resources and provides services for application software.
+Software Engineer,OS,Medium,What is a process?,A process is an instance of a program in execution with its own memory space and system resources.
+Software Engineer,OS,Medium,What is a thread?,A thread is a lightweight unit of execution within a process that shares memory with other threads.
+Software Engineer,OS,Hard,What is deadlock?,Deadlock occurs when two or more processes wait indefinitely for resources held by each other.
+Software Engineer,Networking,Easy,What is a computer network?,A computer network is a collection of interconnected devices that communicate and share resources.
+Software Engineer,Networking,Medium,What is TCP vs UDP?,"TCP is connection-oriented and reliable, ensuring data delivery, while UDP is connectionless and faster but does not guarantee delivery."
+Software Engineer,Networking,Hard,What is the OSI model?,The OSI model is a seven-layer framework that standardizes network communication functions.
+Software Engineer,Networking,Medium,What is DNS?,DNS (Domain Name System) translates human-readable domain names into IP addresses.
+Software Engineer,Clean Code Principles,Easy,What is clean code?,"Clean code is readable, maintainable, simple, and easy to understand by other developers."
+Software Engineer,Clean Code Principles,Medium,What is the Single Responsibility Principle?,"A class should have only one reason to change, meaning it should perform a single responsibility."
+Software Engineer,Clean Code Principles,Hard,What is SOLID principle?,SOLID is a set of five design principles that improve maintainability and scalability of object-oriented systems.
+Software Engineer,OOPS,Hard,What is composition vs inheritance?,"Inheritance models an 'is-a' relationship, while composition models a 'has-a' relationship and is often preferred for flexibility."
+Software Engineer,DBMS,Hard,What is a transaction?,A transaction is a sequence of database operations executed as a single logical unit of work.
+Software Engineer,OS,Hard,What is context switching?,Context switching is the process of saving and restoring the state of a CPU so multiple processes can share a single CPU.
+Software Engineer,Networking,Hard,What is HTTP vs HTTPS?,"HTTP is a protocol for transferring web data, while HTTPS is the secure version that encrypts communication using SSL/TLS."
+Software Engineer,Clean Code Principles,Medium,Why is meaningful naming important?,"Meaningful names improve readability, reduce ambiguity, and make code self-documenting."
+Software Engineer,OOPS,Medium,What is an interface?,"An interface defines a contract of methods that implementing classes must provide, without specifying implementation details."
+Software Engineer,OOPS,Hard,What is dynamic binding?,"Dynamic binding resolves method calls at runtime rather than compile time, enabling runtime polymorphism."
+Software Engineer,OOPS,Medium,What is a constructor?,A constructor is a special method used to initialize objects when they are created.
+Software Engineer,OOPS,Hard,What is the Liskov Substitution Principle?,Objects of a superclass should be replaceable with objects of a subclass without affecting correctness.
+Software Engineer,OOPS,Medium,What is method hiding?,Method hiding occurs when a subclass defines a static method with the same signature as a static method in its superclass.
+Software Engineer,DBMS,Medium,What is a primary key?,A primary key uniquely identifies each record in a table and cannot contain null values.
+Software Engineer,DBMS,Medium,What is a foreign key?,A foreign key is a column that establishes a relationship between two tables by referencing the primary key of another table.
+Software Engineer,DBMS,Hard,What is isolation level in databases?,"Isolation level defines how transaction integrity is visible to other transactions, controlling phenomena like dirty reads and phantom reads."
+Software Engineer,DBMS,Hard,What is a deadlock in DBMS?,A database deadlock occurs when two or more transactions wait indefinitely for each other’s locks to be released.
+Software Engineer,OS,Medium,What is virtual memory?,Virtual memory is a memory management technique that provides an illusion of large memory by using disk space as an extension of RAM.
+Software Engineer,OS,Hard,What is paging?,Paging is a memory management scheme that divides memory into fixed-size blocks called pages to eliminate external fragmentation.
+Software Engineer,OS,Medium,What is scheduling in OS?,Scheduling determines which process or thread gets CPU time and for how long.
+Software Engineer,OS,Hard,What is starvation?,Starvation occurs when a process never gets CPU time because other higher-priority processes keep executing.
+Software Engineer,Networking,Medium,What is an IP address?,An IP address uniquely identifies a device on a network and enables communication between devices.
+Software Engineer,Networking,Hard,What is subnetting?,Subnetting divides a network into smaller sub-networks to improve performance and security.
+Software Engineer,Networking,Medium,What is a firewall?,A firewall is a security system that monitors and controls incoming and outgoing network traffic.
+Software Engineer,Networking,Hard,What is ARP?,ARP (Address Resolution Protocol) maps IP addresses to MAC addresses within a local network.
+Software Engineer,Clean Code Principles,Medium,What is DRY principle?,DRY (Don't Repeat Yourself) emphasizes reducing code duplication to improve maintainability.
+Software Engineer,Clean Code Principles,Hard,What is Open-Closed Principle?,Software entities should be open for extension but closed for modification.
+Software Engineer,Clean Code Principles,Medium,What is code refactoring?,Refactoring is restructuring existing code without changing its external behavior to improve readability and maintainability.
+Software Engineer,OOPS,Hard,What is dependency injection?,"Dependency injection is a design pattern where dependencies are provided to a class rather than created inside it, improving modularity and testability."
+Software Engineer,DBMS,Medium,What is denormalization?,Denormalization intentionally introduces redundancy to improve read performance.
+Software Engineer,OS,Medium,What is mutex?,A mutex is a synchronization mechanism used to prevent multiple threads from accessing shared resources simultaneously.
+Software Engineer,Networking,Medium,What is latency?,Latency is the time delay between sending a request and receiving a response over a network.
+Software Engineer,Clean Code Principles,Hard,Why should functions be small?,"Small functions improve readability, reusability, testability, and reduce cognitive complexity."
+Software Engineer,OOPS,Medium,What is an abstract class?,An abstract class is a class that cannot be instantiated and may contain abstract methods that must be implemented by subclasses.
+Software Engineer,OOPS,Hard,What is multiple inheritance and its problem?,Multiple inheritance allows a class to inherit from more than one class. It can lead to ambiguity issues like the diamond problem.
+Software Engineer,OOPS,Medium,What is the diamond problem?,"The diamond problem occurs in multiple inheritance when a class inherits from two classes that both inherit from the same parent, causing ambiguity in method resolution."
+Software Engineer,OOPS,Hard,What is immutability?,"Immutability means an object's state cannot be modified after creation, improving thread safety and predictability."
+Software Engineer,OOPS,Medium,What is method overriding?,Method overriding occurs when a subclass provides a specific implementation for a method defined in its superclass.
+Software Engineer,DBMS,Medium,What is a JOIN?,A JOIN combines rows from two or more tables based on a related column.
+Software Engineer,DBMS,Hard,What is the difference between INNER JOIN and LEFT JOIN?,"INNER JOIN returns matching rows from both tables, while LEFT JOIN returns all rows from the left table and matching rows from the right table."
+Software Engineer,DBMS,Medium,What is a composite key?,A composite key is a primary key formed by combining two or more columns.
+Software Engineer,DBMS,Hard,What is query optimization?,Query optimization is the process of improving query performance by choosing efficient execution plans.
+Software Engineer,OS,Medium,What is a semaphore?,A semaphore is a synchronization tool used to control access to shared resources in concurrent systems.
+Software Engineer,OS,Hard,What are the necessary conditions for deadlock?,"The four conditions are mutual exclusion, hold and wait, no preemption, and circular wait."
+Software Engineer,OS,Medium,What is thrashing?,Thrashing occurs when excessive paging leads to high disk activity and reduced CPU utilization.
+Software Engineer,OS,Hard,What is demand paging?,"Demand paging loads pages into memory only when they are needed, reducing memory usage."
+Software Engineer,Networking,Medium,What is the difference between hub and switch?,"A hub broadcasts data to all devices, while a switch forwards data only to the intended recipient."
+Software Engineer,Networking,Hard,What is NAT?,Network Address Translation (NAT) allows multiple devices on a private network to share a single public IP address.
+Software Engineer,Networking,Medium,What is SSL/TLS?,SSL/TLS are cryptographic protocols that secure communication over a network.
+Software Engineer,Networking,Hard,What is three-way handshake in TCP?,"The TCP three-way handshake establishes a connection using SYN, SYN-ACK, and ACK messages."
+Software Engineer,Clean Code Principles,Medium,What is KISS principle?,"KISS (Keep It Simple, Stupid) emphasizes simplicity in design and implementation."
+Software Engineer,Clean Code Principles,Hard,What is Interface Segregation Principle?,Clients should not be forced to depend on interfaces they do not use.
+Software Engineer,Clean Code Principles,Medium,What is meaningful commenting?,"Meaningful comments explain why something is done, not what the code is already clearly expressing."
+Software Engineer,OOPS,Hard,What is object slicing?,"Object slicing occurs when a derived class object is assigned to a base class object, losing derived class-specific data."
+Software Engineer,DBMS,Medium,What is a view in DBMS?,A view is a virtual table created from a SQL query that does not store data physically.
+Software Engineer,OS,Medium,What is interrupt?,An interrupt is a signal to the CPU indicating an event that requires immediate attention.
+Software Engineer,Networking,Medium,What is bandwidth?,Bandwidth is the maximum data transfer rate of a network connection.
+Software Engineer,Clean Code Principles,Hard,Why avoid magic numbers?,Magic numbers reduce readability and maintainability; named constants should be used instead.
+Software Engineer,OOPS,Medium,What is cohesion in OOPS?,Cohesion refers to how closely related the responsibilities of a single module or class are. High cohesion is desirable for maintainability.
+Software Engineer,OOPS,Hard,What is coupling?,Coupling refers to the degree of dependency between modules or classes. Low coupling is preferred to improve flexibility and testability.
+Software Engineer,OOPS,Medium,What is the difference between shallow copy and deep copy?,"Shallow copy copies object references, while deep copy creates independent copies of all nested objects."
+Software Engineer,OOPS,Hard,What is method overloading?,Method overloading allows multiple methods with the same name but different parameter lists within the same class.
+Software Engineer,OOPS,Medium,What is the purpose of access modifiers?,"Access modifiers control the visibility and accessibility of classes, methods, and variables."
+Software Engineer,DBMS,Medium,What is a stored procedure?,A stored procedure is a precompiled set of SQL statements stored in the database for reuse.
+Software Engineer,DBMS,Hard,What is CAP theorem?,"CAP theorem states that a distributed system can provide only two of the following three guarantees: Consistency, Availability, and Partition tolerance."
+Software Engineer,DBMS,Medium,What is a trigger?,A trigger is a database object that automatically executes in response to specific events like insert or update.
+Software Engineer,DBMS,Hard,What is sharding?,Sharding is a technique of horizontally partitioning a database into smaller pieces called shards to improve scalability.
+Software Engineer,OS,Medium,What is memory fragmentation?,"Memory fragmentation occurs when free memory is divided into small non-contiguous blocks, reducing allocation efficiency."
+Software Engineer,OS,Hard,What is a race condition?,A race condition occurs when multiple threads access shared data concurrently and the outcome depends on execution order.
+Software Engineer,OS,Medium,What is inter-process communication (IPC)?,IPC refers to mechanisms that allow processes to communicate and share data.
+Software Engineer,OS,Hard,What is kernel mode vs user mode?,"Kernel mode has full access to system resources, while user mode has restricted access to ensure system security."
+Software Engineer,Networking,Medium,What is a proxy server?,"A proxy server acts as an intermediary between client and server, often used for security or caching."
+Software Engineer,Networking,Hard,What is packet switching?,Packet switching breaks data into small packets that are transmitted independently across a network.
+Software Engineer,Networking,Medium,What is CDN?,A Content Delivery Network (CDN) distributes content across geographically distributed servers to reduce latency.
+Software Engineer,Networking,Hard,What is DNS resolution process?,DNS resolution translates a domain name into an IP address by querying DNS servers in a hierarchical manner.
+Software Engineer,Clean Code Principles,Medium,What is YAGNI principle?,YAGNI (You Aren't Gonna Need It) suggests implementing only what is necessary and avoiding premature features.
+Software Engineer,Clean Code Principles,Hard,What is Dependency Inversion Principle?,High-level modules should not depend on low-level modules; both should depend on abstractions.
+Software Engineer,Clean Code Principles,Medium,What is code smell?,Code smell is an indication of poor design or implementation that may lead to maintainability issues.
+Software Engineer,OOPS,Hard,What is design pattern?,A design pattern is a reusable solution to common software design problems.
+Software Engineer,DBMS,Medium,What is replication?,Replication is copying data across multiple database servers to improve availability and fault tolerance.
+Software Engineer,OS,Medium,What is load balancing in OS?,Load balancing distributes workload evenly across CPUs or systems to optimize resource use.
+Software Engineer,Networking,Medium,What is port number?,A port number identifies a specific process or service running on a device.
+Software Engineer,Clean Code Principles,Hard,Why write unit tests?,"Unit tests ensure correctness, prevent regressions, and make refactoring safer."

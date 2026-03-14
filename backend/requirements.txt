@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+python-dotenv
+pydantic
+
+# LangChain
+langchain
+langchain-google-genai
+langchain-community
+
+# Vector DB
+faiss-cpu
+
+# Data
+pandas
