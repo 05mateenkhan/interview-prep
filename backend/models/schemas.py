@@ -43,3 +43,22 @@ class ResumeAnalysisResponse(BaseModel):
     confidence: str        # "High" | "Medium" | "Low"
     role_reasoning: str
     extracted_skills: list[str]
+
+
+class AudioSubmissionResponse(BaseModel):
+    """
+    Returned by POST /submit-audio-answer.
+    Identical shape to SubmitAnswerResponse + transcription fields.
+    """
+    # ── Transcription info ────────────────────────────────────────────────────
+    transcribed_text: str
+    audio_duration_seconds: float
+    transcription_confidence: str          # "high" | "medium" | "low"
+ 
+    # ── Evaluation (same as /submit response) ─────────────────────────────────
+    feedback: str
+    ideal_answer: str
+    missing_concepts: list[str]
+    score: FeedbackScore
+    next_question: Optional[str] = None
+    session_complete: bool = False

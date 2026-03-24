@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PrepIQ — Voice Answer Demo</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 60px auto; padding: 0 20px; }
+    button { padding: 10px 20px; margin: 8px 4px; border-radius: 8px; border: none; cursor: pointer; font-size: 14px; }
+    #recordBtn  { background: #4f46e5; color: white; }
+    #stopBtn    { background: #ef4444; color: white; display: none; }
+    #submitBtn  { background: #22c55e; color: white; display: none; }
+    #status     { margin: 12px 0; color: #6b7280; font-size: 14px; }
+    #result     { background: #f9fafb; border-radius: 10px; padding: 16px; margin-top: 16px; display: none; }
+    pre         { white-space: pre-wrap; font-size: 13px; }
+  </style>
+</head>
+<body>
+
+<h2>🎤 Voice Answer</h2>
+<p id="question"><strong>Question:</strong> What is the difference between mean, median, and mode?</p>
+
+<button id="recordBtn">🔴 Start Recording</button>
+<button id="stopBtn">⏹ Stop Recording</button>
+<button id="submitBtn">📤 Submit Answer</button>
+
+<p id="status">Ready to record.</p>
+<audio id="playback" controls style="display:none; margin-top:10px; width:100%;"></audio>
+
+<div id="result">
+  <h3>📊 Result</h3>
+  <p><strong>Transcribed Text:</strong></p>
+  <pre id="transcription"></pre>
+  <p><strong>Evaluation Feedback:</strong></p>
+  <pre id="feedback"></pre>
+</div>
+
+<script>
+  let mediaRecorder;
+  let audioChunks = [];
+  let audioBlob;
+
+  const recordBtn   = document.getElementById("recordBtn");
+  const stopBtn     = document.getElementById("stopBtn");
+  const submitBtn   = document.getElementById("submitBtn");
+  const status      = document.getElementById("status");
+  const playback    = document.getElementById("playback");
+  const resultDiv   = document.getElementById("result");
+
+  // ── Start Recording ───────────────────────────────────────────────────────
+  recordBtn.addEventListener("click", async () => {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    mediaRecorder = new MediaRecorder(stream, { mimeType: "audio/webm" });
+    audioChunks = [];
+
+    mediaRecorder.ondataavailable = (e) => audioChunks.push(e.data);
+
+    mediaRecorder.onstop = () => {
+      audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+      playback.src = URL.createObjectURL(audioBlob);
+      playback.style.display = "block";
+      submitBtn.style.display = "inline-block";
+      status.textContent = "Recording complete. Review and submit.";
+    };
+
+    mediaRecorder.start();
+    recordBtn.style.display = "none";
+    stopBtn.style.display = "inline-block";
+    status.textContent = "🔴 Recording...";
+  });
+
+  // ── Stop Recording ────────────────────────────────────────────────────────
+  stopBtn.addEventListener("click", () => {
+    mediaRecorder.stop();
+    stopBtn.style.display = "none";
+    recordBtn.style.display = "inline-block";
+  });
+
+  // ── Submit to Backend ─────────────────────────────────────────────────────
+  submitBtn.addEventListener("click", async () => {
+    status.textContent = "⏳ Transcribing and evaluating...";
+    submitBtn.disabled = true;
+
+    const formData = new FormData();
+    formData.append("file", audioBlob, "answer.webm");
+    formData.append("question", "What is the difference between mean, median, and mode?");
+    formData.append("difficulty", "Easy");
+
+    try {
+      const res = await fetch("http://localhost:8000/submit-audio-answer", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        status.textContent = `❌ Error: ${data.detail}`;
+        return;
+      }
+
+      document.getElementById("transcription").textContent = data.transcribed_text;
+      document.getElementById("feedback").textContent = JSON.stringify(data.evaluation, null, 2);
+      resultDiv.style.display = "block";
+      status.textContent = `✅ Done! Confidence: ${data.transcription_confidence} · Duration: ${data.audio_duration_seconds}s`;
+    } catch (err) {
+      status.textContent = `❌ Request failed: ${err.message}`;
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>

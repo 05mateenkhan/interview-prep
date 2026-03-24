@@ -1,4 +1,4 @@
-# Backend — PrepIQ (Interview Engine)
+# Backend — (Interview Engine)
 
 This folder contains the FastAPI backend that powers the PrepIQ interview and resume analysis services.
 
@@ -6,6 +6,7 @@ This folder contains the FastAPI backend that powers the PrepIQ interview and re
 - Python 3.10+ recommended
 - A virtual environment (venv)
 - Any LLM / vector-store API keys required by services (place in `.env`)
+- Currently add your GEMINI_API_KEY in .env
 
 ## Quick setup (Windows)
 
@@ -31,7 +32,7 @@ pip install -r requirements.txt
 
 4. Provide environment variables:
 
-- There is an `.env` in the folder (if present). Add any LLM keys, third-party endpoints or other secrets required by `services/*`.
+- There is an `.env` in the folder (if present). Add any LLM keys(GEMINI_API_KEY), third-party endpoints or other secrets required by `services/*`.
 
 5. Run the development server:
 

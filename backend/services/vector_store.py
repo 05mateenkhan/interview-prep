@@ -65,10 +65,14 @@ def retrieve_question(k: int, role: str, topic: str, difficulty: str, exclude_qu
     query = f"Role: {role}\n Difficulty: {difficulty}"
     results = store.similarity_search(query, k=k)
 
-    for i in range (0,k*2):
-        doc_no = random.randint(0,k)
-        q = results[doc_no].metadata["question"]
-        if q not in exclude_questions:
-            return results[doc_no].metadata
+    # ✅ Safety check
+    if not results:
+        raise ValueError("No questions found for given filters")
+
+    # ✅ Fixed selection logic
+    for _ in range(len(results)):
+        doc = random.choice(results)
+        if doc.metadata["question"] not in exclude_questions:
+            return doc.metadata
 
     return results[0].metadata

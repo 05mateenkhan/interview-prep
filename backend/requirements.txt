@@ -1,3 +1,7 @@
+setuptools
+wheel
+
+
 fastapi
 uvicorn
 python-dotenv
@@ -13,3 +17,13 @@ faiss-cpu
 
 # Data
 pandas
+
+
+# for voice
+
+python-multipart     # FastAPI file upload support
+openai-whisper     # OpenAI Whisper (runs fully locally, free, no API key needed)
+torch                 # Required by Whisper
+ffmpeg-python       # Audio format conversion (WAV/MP3 → compatible format)
+# pydub
+# pyaudioop
