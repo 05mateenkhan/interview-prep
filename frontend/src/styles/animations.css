@@ -1,0 +1,143 @@
+/* Page transitions */
+.page {
+  animation: pageEnter var(--transition-slow) ease;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card hover effects */
+.question-card,
+.feedback-card,
+.stat-card,
+.question-item {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.question-card:hover,
+.feedback-card:hover,
+.stat-card:hover,
+.question-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Button micro-interactions */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.btn:active::after {
+  opacity: 0.1;
+}
+
+/* Input focus ring */
+textarea:focus,
+select:focus,
+input:focus {
+  animation: focusRing var(--transition-fast) ease;
+}
+
+@keyframes focusRing {
+  0% {
+    box-shadow: 0 0 0 0 var(--accent);
+  }
+  100% {
+    box-shadow: 0 0 0 3px var(--accent-muted);
+  }
+}
+
+/* Score bar animation */
+.metric-fill {
+  animation: fillBar var(--transition-slow) ease;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0 !important;
+  }
+}
+
+/* Stagger children */
+.stagger-children > * {
+  animation: fadeIn var(--transition-slow) ease both;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 50ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 100ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 150ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 200ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 250ms; }
+
+/* Pulse animation for recording */
+@keyframes recordPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+/* Success checkmark animation */
+@keyframes checkmark {
+  0% {
+    stroke-dashoffset: 50;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.celebration-icon svg path {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: checkmark 0.5s ease 0.2s forwards;
+}
+
+/* Smooth color transitions */
+.badge,
+.stat-value,
+.score-value {
+  transition: color var(--transition-fast);
+}
+
+/* Fade out / Fade in for conditional rendering */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity var(--transition-base);
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}

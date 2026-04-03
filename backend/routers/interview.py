@@ -78,9 +78,10 @@ def submit_answer(req: SubmitAnswerRequest):
     if not session_complete:
         # Retrieve next unique question from FAISS
         next_doc = retrieve_question(
-            session["role"],
-            session["topic"],
-            session["difficulty"],
+            k=session["max_questions"],
+            role=session["role"],
+            topic=session["topic"],
+            difficulty=session["difficulty"],
             exclude_questions=session["asked"],
         )
         session["asked"].append(next_doc["question"])
