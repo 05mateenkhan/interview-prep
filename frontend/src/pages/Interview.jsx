@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from '../components/Button';
 import AudioRecorder from '../components/AudioRecorder';
 import FeedbackCard from '../components/FeedbackCard';
-import { useInterview } from '../hooks/useInterview';
+import { useInterview } from '../contexts/InterviewContext';
 import './Interview.css';
 
 export default function Interview({ onComplete }) {

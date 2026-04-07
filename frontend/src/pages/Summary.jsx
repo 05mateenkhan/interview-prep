@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Button from '../components/Button';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ScoreDisplay from '../components/ScoreDisplay';
-import { useInterview } from '../hooks/useInterview';
+import { useInterview } from '../contexts/InterviewContext';
 import './Summary.css';
 
 export default function Summary({ onNewSession }) {
@@ -84,7 +84,30 @@ export default function Summary({ onNewSession }) {
       {feedback && (
         <div className="overall-feedback">
           <h3>Overall Feedback</h3>
-          <p>{feedback.overall_summary || feedback.summary}</p>
+          <p>{feedback.overall_feedback}</p>
+
+          {feedback.areas_to_improve && feedback.areas_to_improve.length > 0 && (
+            <div className="areas-to-improve">
+              <h4>Areas to Improve</h4>
+              <ul>
+                {feedback.areas_to_improve.map((area, index) => (
+                  <li key={index}>{area}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {feedback.overall_score !== undefined && (
+            <div className="overall-score">
+              <span className="score-label">Overall Score:</span>
+              <span
+                className="score-value"
+                style={{ color: getScoreColor(feedback.overall_score * 10) }}
+              >
+                {feedback.overall_score}/10
+              </span>
+            </div>
+          )}
         </div>
       )}
 

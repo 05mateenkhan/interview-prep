@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Button from '../components/Button';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { useInterview } from '../hooks/useInterview';
+import { useInterview } from '../contexts/InterviewContext';
 import './Setup.css';
 
 export default function Setup({ onStart }) {

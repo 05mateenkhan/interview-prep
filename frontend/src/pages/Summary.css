@@ -77,6 +77,63 @@
   font-size: var(--text-base);
   line-height: 1.7;
   color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+/* Areas to improve */
+.areas-to-improve {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+}
+
+.areas-to-improve h4 {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--warning);
+  margin-bottom: var(--space-sm);
+}
+
+.areas-to-improve ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.areas-to-improve li {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  padding: var(--space-xs) 0;
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.areas-to-improve li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--warning);
+}
+
+/* Overall score */
+.overall-score {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.score-label {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+}
+
+.score-value {
+  font-size: var(--text-2xl);
+  font-weight: 700;
 }
 
 /* Question breakdown */

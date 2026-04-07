@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { useInterview } from './hooks/useInterview';
+import { InterviewProvider, useInterview } from './contexts/InterviewContext';
 import Landing from './pages/Landing';
 import Setup from './pages/Setup';
 import Interview from './pages/Interview';
 import Summary from './pages/Summary';
 import './App.css';
 
-function App() {
+function AppContent() {
   const [page, setPage] = useState('landing');
   const { session } = useInterview();
 
@@ -28,6 +28,14 @@ function App() {
         )}
       </main>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <InterviewProvider>
+      <AppContent />
+    </InterviewProvider>
   );
 }
 
