@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:8000';
+const API_BASE = '';
 
 // Helper for fetch with error handling
 async function fetchAPI(endpoint, options = {}) {

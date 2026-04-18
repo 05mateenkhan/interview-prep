@@ -39,8 +39,8 @@ export default function Summary({ onNewSession }) {
   }
 
   const getScoreColor = (value) => {
-    if (value >= 80) return 'var(--success)';
-    if (value >= 60) return 'var(--warning)';
+    if (value >= 8) return 'var(--success)';
+    if (value >= 6) return 'var(--warning)';
     return 'var(--error)';
   };
 
@@ -64,7 +64,7 @@ export default function Summary({ onNewSession }) {
           <span className="stat-value" style={{ color: getScoreColor(summary.average_score) }}>
             {summary.average_score}
           </span>
-          <span className="stat-label">Average Score</span>
+          <span className="stat-label">Average Score /10</span>
         </div>
         <div className="stat-card">
           <span className="stat-value">{summary.total_questions}</span>
@@ -102,7 +102,7 @@ export default function Summary({ onNewSession }) {
               <span className="score-label">Overall Score:</span>
               <span
                 className="score-value"
-                style={{ color: getScoreColor(feedback.overall_score * 10) }}
+                style={{ color: getScoreColor(feedback.overall_score) }}
               >
                 {feedback.overall_score}/10
               </span>
@@ -124,7 +124,7 @@ export default function Summary({ onNewSession }) {
                     className="question-score"
                     style={{ color: getScoreColor(item.score) }}
                   >
-                    {item.score}/100
+                    {item.score}/10
                   </span>
                 )}
               </div>

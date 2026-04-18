@@ -2,8 +2,8 @@ import './ScoreDisplay.css';
 
 export default function ScoreDisplay({ score }) {
   const getScoreColor = (value) => {
-    if (value >= 80) return 'var(--success)';
-    if (value >= 60) return 'var(--warning)';
+    if (value >= 8) return 'var(--success)';
+    if (value >= 6) return 'var(--warning)';
     return 'var(--error)';
   };
 
@@ -23,7 +23,7 @@ export default function ScoreDisplay({ score }) {
         >
           {score.overall}
         </span>
-        <span className="score-max">/100</span>
+        <span className="score-max">/10</span>
       </div>
 
       <div className="score-metrics">
@@ -42,7 +42,7 @@ export default function ScoreDisplay({ score }) {
               <div
                 className="metric-fill"
                 style={{
-                  width: `${metric.value}%`,
+                  width: `${metric.value * 10}%`,
                   background: getScoreColor(metric.value),
                 }}
               />

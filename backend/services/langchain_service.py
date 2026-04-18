@@ -6,80 +6,35 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_ollama import ChatOllama
+import os
 load_dotenv()
 
 # ── LLM Setup ────────────────────────────────────────────────────────────────
-llm = ChatOllama(model="llama3.2")
-llm2 = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    google_api_key=os.getenv("GEMINI_API_KEY"),
-    temperature=0.3,
-)
+# Using 3B model for better JSON compliance while still being fast
+# llm = ChatOllama(model="llama3.2:3b")
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 
 # ── Prompt Template ──────────────────────────────────────────────────────────
 EVALUATION_PROMPT = ChatPromptTemplate.from_messages([
-    ("system", """You are an expert technical interviewer evaluating a student's answer.
-You have access to a reference answer from a curated question bank.
-Use the reference answer as the ground truth to evaluate the student.
-Be honest, constructive, and encouraging."""),
+    ("system", "You are a technical interviewer. Evaluate the answer against the reference. Respond JSON only."),
 
     ("human", """
-Domain/Role: {role}
-Topic: {topic}
-Difficulty: {difficulty}
+Role: {role}, Topic: {topic}, Difficulty: {difficulty}
+Q: {question}
+Reference: {reference_answer}
+Answer: {student_answer}
 
-Interview Question:
-{question}
-
-Reference Answer (Ground Truth):
-{reference_answer}
-
-Student's Answer:
-{student_answer}
-
-Evaluate the student's answer against the reference and respond ONLY with a valid JSON object:
-{{
-  "feedback": "2-3 sentences: what the student got right, what was missing compared to the reference",
-  "ideal_answer": "A polished version of the reference answer in simple language",
-  "missing_concepts": ["concept1", "concept2"],
-  "score": {{
-    "accuracy": <integer 0-10>,
-    "clarity": <integer 0-10>,
-    "completeness": <integer 0-10>,
-    "overall": <integer 0-10>
-  }}
-}}
-
-Do not include markdown, backticks, or any text outside the JSON.
+JSON: {{"feedback": "short feedback", "ideal_answer": "simplified answer", "missing_concepts": ["concept"], "score": {{"accuracy": 0-10, "clarity": 0-10, "completeness": 0-10, "overall": 0-10}}}}
 """)
 ])
 
 FEEDBACK_PROMPT = ChatPromptTemplate.from_messages([
-
-    ("system", """You are an expert technical interviewer analyzing the overall performance
-of a candidate after a mock interview.
-
-Review the interview summary and provide constructive evaluation."""),
+    ("system", "You are a technical interviewer. Provide overall feedback. Respond JSON only."),
 
     ("human", """
-Interview Summary:
-{summary_json}
+Summary: {summary_json}
 
-Analyze the interview and generate:
-
-1. overall_feedback → Summary of the candidate's performance
-2. areas_to_improve → Key areas the candidate should improve
-3. overall_score → Final score out of 10
-
-Respond ONLY with JSON in this format:
-
-{{
-  "overall_feedback": "2-3 sentence summary of the performance",
-  "areas_to_improve": ["area1", "area2", "area3"],
-  "overall_score": 0
-}}
-
-Do not include markdown or any text outside the JSON.
+JSON: {{"overall_feedback": "summary", "areas_to_improve": ["area"], "overall_score": 0-10}}
 """)
 ])
 
@@ -107,7 +62,14 @@ def evaluate_answer(
 
     # Strip markdown fences if Gemini adds them
     raw = re.sub(r"^```json|^```|```$", "", raw.strip(), flags=re.MULTILINE).strip()
-    return json.loads(raw)
+    result = json.loads(raw)
+
+    # Ensure scores are integers (round floats to int)
+    if "score" in result:
+        for key in result["score"]:
+            result["score"][key] = int(round(result["score"][key]))
+
+    return result
 
 def overall_feedback(summary_output : dict) -> dict:
     raw = feedback_chain.invoke({
@@ -116,5 +78,10 @@ def overall_feedback(summary_output : dict) -> dict:
 
     # Strip markdown fences if model adds them
     raw = re.sub(r"^```json|^```|```$", "", raw.strip(), flags=re.MULTILINE).strip()
+    result = json.loads(raw)
 
-    return json.loads(raw)
+    # Ensure overall_score is an integer
+    if "overall_score" in result:
+        result["overall_score"] = int(round(result["overall_score"]))
+
+    return result
