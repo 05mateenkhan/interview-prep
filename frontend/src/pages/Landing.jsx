@@ -14,7 +14,7 @@ export default function Landing({ onStart }) {
             />
           </svg>
         </div>
-        <h1>PrepIQ</h1>
+        <h1>InterviewPrep</h1>
         <p className="tagline">Master your next interview with AI-powered practice</p>
       </div>
 

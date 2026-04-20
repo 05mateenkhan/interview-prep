@@ -116,3 +116,35 @@
   min-width: 32px;
   text-align: center;
 }
+
+/* Resume Upload */
+.resume-upload {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.resume-upload input[type="file"] {
+  font-size: var(--text-sm);
+}
+
+.resume-result {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--success);
+}
+
+.detected-role {
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+}
+
+.detected-role strong {
+  color: var(--success);
+}
+
+.confidence {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}

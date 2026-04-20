@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Button from '../components/Button';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { useInterview } from '../contexts/InterviewContext';
+import { resumeApi } from '../services/api';
 import './Setup.css';
 
 export default function Setup({ onStart }) {
@@ -12,10 +13,52 @@ export default function Setup({ onStart }) {
   const [difficulty, setDifficulty] = useState('Medium');
   const [maxQuestions, setMaxQuestions] = useState(5);
   const [starting, setStarting] = useState(false);
+  const [resumeFile, setResumeFile] = useState(null);
+  const [analyzingResume, setAnalyzingResume] = useState(false);
+  const [resumeAnalysis, setResumeAnalysis] = useState(null);
 
   useEffect(() => {
     loadOptions();
   }, [loadOptions]);
+
+  // Auto-select role when resume analysis completes
+  useEffect(() => {
+    if (resumeAnalysis?.detected_role && options?.roles) {
+      const detected = resumeAnalysis.detected_role.toLowerCase();
+      const matchedRole = options.roles.find(r =>
+        r.toLowerCase() === detected ||
+        r.toLowerCase().includes(detected) ||
+        detected.includes(r.toLowerCase())
+      );
+      if (matchedRole) {
+        setRole(matchedRole);
+      }
+    }
+  }, [resumeAnalysis, options]);
+
+  const handleResumeUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    if (!file.type.includes('pdf')) {
+      alert('Please upload a PDF file');
+      return;
+    }
+
+    setResumeFile(file);
+    setAnalyzingResume(true);
+    setResumeAnalysis(null);
+
+    try {
+      const result = await resumeApi.analyzeResume(file);
+      setResumeAnalysis(result);
+    } catch (err) {
+      console.error(err);
+      alert('Failed to analyze resume: ' + err.message);
+    } finally {
+      setAnalyzingResume(false);
+    }
+  };
 
   const handleStart = async () => {
     if (!role || !topic) return;
@@ -55,6 +98,29 @@ export default function Setup({ onStart }) {
       {error && <p className="error-message">{error}</p>}
 
       <div className="setup-form">
+        {/* Resume Upload Section */}
+        <div className="form-group">
+          <label>Upload Resume (Optional)</label>
+          <div className="resume-upload">
+            <input
+              type="file"
+              id="resume"
+              accept=".pdf"
+              onChange={handleResumeUpload}
+              disabled={analyzingResume || starting}
+            />
+            {analyzingResume && <LoadingSpinner text="Analyzing resume..." />}
+            {resumeAnalysis && !analyzingResume && (
+              <div className="resume-result">
+                <span className="detected-role">
+                  Detected Role: <strong>{resumeAnalysis.detected_role}</strong>
+                  <span className="confidence"> ({resumeAnalysis.confidence} confidence)</span>
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+
         <div className="form-group">
           <label htmlFor="role">Role</label>
           <select
