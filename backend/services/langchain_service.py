@@ -11,8 +11,8 @@ load_dotenv()
 
 # ── LLM Setup ────────────────────────────────────────────────────────────────
 # Using 3B model for better JSON compliance while still being fast
-# llm = ChatOllama(model="llama3.2:3b")
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
+llm = ChatOllama(model="llama3.2:3b")
+# llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 
 # ── Prompt Template ──────────────────────────────────────────────────────────
 EVALUATION_PROMPT = ChatPromptTemplate.from_messages([
