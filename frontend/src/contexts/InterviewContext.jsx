@@ -64,10 +64,6 @@ export function InterviewProvider({ children }) {
           {
             question: prev.currentQuestion,
             answer,
-            feedback: data.feedback,
-            idealAnswer: data.ideal_answer,
-            score: data.score,
-            missingConcepts: data.missing_concepts,
           },
         ],
       }));
@@ -101,10 +97,6 @@ export function InterviewProvider({ children }) {
           {
             question: prev.currentQuestion,
             answer: data.transcribed_text,
-            feedback: data.feedback,
-            idealAnswer: data.ideal_answer,
-            score: data.score,
-            missingConcepts: data.missing_concepts,
           },
         ],
       }));
@@ -128,6 +120,16 @@ export function InterviewProvider({ children }) {
     return interviewApi.getFeedback(session.sessionId);
   }, [session]);
 
+  const getFeedbackV2 = useCallback(async () => {
+    if (!session?.sessionId) return null;
+    return interviewApi.getFeedbackV2(session.sessionId);
+  }, [session]);
+
+  const getSummaryV2 = useCallback(async () => {
+    if (!session?.sessionId) return null;
+    return interviewApi.getSummaryV2(session.sessionId);
+  }, [session]);
+
   const clearSession = useCallback(() => {
     setSession(null);
     setError(null);
@@ -144,6 +146,8 @@ export function InterviewProvider({ children }) {
     submitAudioAnswer,
     getSummary,
     getFeedback,
+    getFeedbackV2,
+    getSummaryV2,
     clearSession,
   };
 

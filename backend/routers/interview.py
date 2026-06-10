@@ -1,10 +1,11 @@
 from fastapi import APIRouter, HTTPException
 from models.schemas import (
     StartSessionRequest, StartSessionResponse,
-    SubmitAnswerRequest, SubmitAnswerResponse, FeedbackScore
+    SubmitAnswerRequest, SubmitAnswerResponse, FeedbackScore,
+    BatchEvaluationResponse, QuestionEvaluation, SummaryResponse
 )
 from services.vector_store import retrieve_question
-from services.langchain_service import evaluate_answer, overall_feedback
+from services.langchain_service import evaluate_answer, overall_feedback, evaluate_batch_answers
 import uuid
 
 router = APIRouter(prefix="/interview", tags=["Interview"])
@@ -48,29 +49,22 @@ def start_session(req: StartSessionRequest):
 
 @router.post("/submit", response_model=SubmitAnswerResponse)
 def submit_answer(req: SubmitAnswerRequest):
-    """Submit answer → evaluate against CSV reference → return feedback + next question."""
+    """Submit answer → store Q&A → return next question (NO LLM CALL - saved for batch evaluation)."""
     session = sessions.get(req.session_id)
     if not session:
         raise HTTPException(status_code=404, detail="Session not found")
 
     current_q_index = session["current_question_number"] - 1
     current_question = session["asked"][current_q_index]
-    reference_answer = session["reference_answers"][current_q_index]
 
-    # Evaluate using LangChain + Gemini/ Ollama with reference answer as ground truth
-    result = evaluate_answer(
-        role=session["role"],
-        topic=session["topic"],
-        difficulty=session["difficulty"],
-        question=current_question,
-        reference_answer=reference_answer,
-        student_answer=req.answer,
-    )
-
+    # ✅ BATCH EVALUATION v2: Just store the answer, NO LLM CALL
     session["student_answers"].append(req.answer)
-    session["scores"].append(result["score"]["overall"])
-    session["feedback"].append(result["feedback"])
-    session["ideal_answer"].append(result["ideal_answer"])
+    
+    # Store placeholder values (will be filled by batch evaluation later)
+    session["scores"].append(None)
+    session["feedback"].append(None)
+    session["ideal_answer"].append(None)
+    
     current_q_num = session["current_question_number"]
     session_complete = current_q_num >= session["max_questions"]
 
@@ -89,11 +83,12 @@ def submit_answer(req: SubmitAnswerRequest):
         session["current_question_number"] += 1
         next_question = next_doc["question"]
 
+    # Return empty feedback (will be generated at end via feedback_v2 endpoint)
     return SubmitAnswerResponse(
-        feedback=result["feedback"],
-        ideal_answer=result["ideal_answer"],
-        missing_concepts=result.get("missing_concepts", []),
-        score=FeedbackScore(**result["score"]),
+        feedback="",
+        ideal_answer="",
+        missing_concepts=[],
+        score=FeedbackScore(accuracy=0, clarity=0, completeness=0, overall=0),
         next_question=next_question,
         session_complete=session_complete,
     )
@@ -164,3 +159,127 @@ def get_feedback(session_id: str):
     summary = get_summary(session_id)
     result = overall_feedback(summary)
     return result
+
+
+# ── Phase 2 Batch Evaluation Endpoints ───────────────────────────────────────
+
+@router.post("/feedback_v2/{session_id}", response_model=BatchEvaluationResponse)
+def evaluate_batch_feedback(session_id: str):
+    """
+    Evaluate entire interview session in one LLM call.
+    Sends all questions and answers together for comprehensive evaluation.
+    """
+    session = sessions.get(session_id)
+    if not session:
+        raise HTTPException(status_code=404, detail="Session not found")
+    
+    # Build Q&A pairs from session data
+    questions_with_answers = [
+        {
+            "question_id": i + 1,
+            "question": session["asked"][i],
+            "user_answer": session["student_answers"][i] if i < len(session["student_answers"]) else "",
+        }
+        for i in range(len(session["asked"]))
+    ]
+    
+    # Call batch evaluation service
+    batch_result = evaluate_batch_answers(
+        questions_with_answers=questions_with_answers,
+        role=session["role"],
+        topic=session["topic"],
+        difficulty=session["difficulty"],
+        resume_text=None,  # Can be added if resume is stored in session
+    )
+    
+    # Transform batch result into BatchEvaluationResponse format
+    question_evaluations = [
+        QuestionEvaluation(
+            question_id=q_eval["question_id"],
+            question=session["asked"][q_eval["question_id"] - 1],
+            user_answer=questions_with_answers[q_eval["question_id"] - 1]["user_answer"],
+            score=q_eval["score"],
+            feedback=q_eval["feedback"],
+        )
+        for q_eval in batch_result.get("question_evaluations", [])
+    ]
+    
+    return BatchEvaluationResponse(
+        session_id=session_id,
+        overall_score=batch_result.get("overall_score", 0),
+        feedback=batch_result.get("overall_feedback", ""),
+        question_evaluations=question_evaluations,
+        strengths=batch_result.get("strengths", []),
+        weaknesses=batch_result.get("weaknesses", []),
+        recommendations=batch_result.get("recommendations", []),
+    )
+
+
+@router.post("/summary_v2/{session_id}", response_model=SummaryResponse)
+def generate_batch_summary(session_id: str):
+    """
+    Generate comprehensive interview summary from batch evaluation.
+    Combines all Q&A data with LLM evaluation for detailed insights.
+    """
+    session = sessions.get(session_id)
+    if not session:
+        raise HTTPException(status_code=404, detail="Session not found")
+    
+    # First, get batch evaluation if not already done
+    batch_result = evaluate_batch_feedback(session_id)
+    
+    # Build comprehensive summary
+    summary_text = f"""
+Interview Summary:
+Role: {session['role']}
+Topic: {session['topic']}
+Difficulty: {session['difficulty']}
+Total Questions: {len(session['asked'])}
+Overall Score: {batch_result.overall_score}/100
+
+Feedback: {batch_result.feedback}
+
+Strengths:
+- {chr(10).join(f"- {s}" for s in batch_result.strengths)}
+
+Weaknesses:
+- {chr(10).join(f"- {w}" for w in batch_result.weaknesses)}
+
+Recommendations:
+- {chr(10).join(f"- {r}" for r in batch_result.recommendations)}
+""".strip()
+    
+    # Generate next steps based on scores
+    next_steps = []
+    if batch_result.overall_score < 50:
+        next_steps.append("Focus on fundamental concepts")
+    if batch_result.overall_score < 70:
+        next_steps.append("Practice with more examples")
+    next_steps.append("Review areas of weakness highlighted above")
+    next_steps.append("Attempt similar difficulty interview again to track progress")
+
+    # Transform batch result into QuestionEvaluation format for frontend
+    question_evaluations = [
+        QuestionEvaluation(
+            question_id=q_eval.question_id,
+            question=session["asked"][q_eval.question_id - 1],
+            user_answer=session["student_answers"][q_eval.question_id - 1],
+            score=q_eval.score,
+            feedback=q_eval.feedback,
+        )
+        for q_eval in batch_result.question_evaluations
+    ]
+
+    return SummaryResponse(
+        session_id=session_id,
+        role=session["role"],
+        topic=session["topic"],
+        difficulty=session["difficulty"],
+        summary=summary_text,
+        overall_score=batch_result.overall_score,
+        strengths=batch_result.strengths,
+        weaknesses=batch_result.weaknesses,
+        recommendations=batch_result.recommendations,
+        next_steps=next_steps,
+        question_evaluations=question_evaluations,
+    )

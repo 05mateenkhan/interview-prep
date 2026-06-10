@@ -7,6 +7,11 @@ uvicorn
 python-dotenv
 pydantic
 
+# Testing
+pytest
+pytest-cov
+httpx
+
 # LangChain
 langchain
 langchain-google-genai

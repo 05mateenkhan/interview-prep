@@ -71,6 +71,18 @@ export const interviewApi = {
 
   // Get overall feedback
   getFeedback: (sessionId) => fetchAPI(`/interview/feedback/${sessionId}`),
+
+  // Get batch evaluation feedback (v2)
+  getFeedbackV2: (sessionId) =>
+    fetchAPI(`/interview/feedback_v2/${sessionId}`, {
+      method: 'POST',
+    }),
+
+  // Get batch evaluation summary (v2)
+  getSummaryV2: (sessionId) =>
+    fetchAPI(`/interview/summary_v2/${sessionId}`, {
+      method: 'POST',
+    }),
 };
 
 // Resume API

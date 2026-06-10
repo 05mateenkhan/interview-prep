@@ -62,3 +62,61 @@ class AudioSubmissionResponse(BaseModel):
     score: FeedbackScore
     next_question: Optional[str] = None
     session_complete: bool = False
+
+
+# ── Phase 2 Batch Evaluation Models ───────────────────────────────────────────
+
+class QuestionAnswerPair(BaseModel):
+    question_id: int
+    question: str
+    user_answer: str
+
+
+class BatchEvaluationRequest(BaseModel):
+    """
+    Request model for batch evaluation endpoint.
+    Accepts a list of questions with answers for a session.
+    """
+    questions_with_answers: list[QuestionAnswerPair]
+    resume_text: Optional[str] = None
+    interview_metadata: Optional[dict] = None  # role, topic, difficulty, etc.
+
+
+class QuestionEvaluation(BaseModel):
+    question_id: int
+    question: str
+    user_answer: str
+    score: float  # 0-100
+    feedback: str
+
+
+class BatchEvaluationResponse(BaseModel):
+    """
+    Response model for batch evaluation endpoint.
+    Contains overall score and per-question evaluations.
+    """
+    session_id: str
+    overall_score: float  # 0-100
+    feedback: str  # Comprehensive evaluation
+    question_evaluations: list[QuestionEvaluation]
+    strengths: list[str]
+    weaknesses: list[str]
+    recommendations: list[str]
+
+
+class SummaryResponse(BaseModel):
+    """
+    Response model for summary endpoint.
+    Contains formatted interview summary and recommendations.
+    """
+    session_id: str
+    role: str
+    topic: str
+    difficulty: str
+    summary: str
+    overall_score: float
+    strengths: list[str]
+    weaknesses: list[str]
+    recommendations: list[str]
+    next_steps: list[str]
+    question_evaluations: list[QuestionEvaluation] = []  # Per-question breakdown

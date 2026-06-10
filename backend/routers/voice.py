@@ -11,7 +11,7 @@ from the existing session store — no duplicate state.
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 from models.schemas import AudioSubmissionResponse, FeedbackScore
 from services.transcription_service import transcribe_audio
-from services.evaluation_service import evaluate_transcribed_answer, advance_session
+from services.evaluation_service import advance_session
 
 # ── Import the shared session store from interview router ─────────────────────
 # Both /submit and /submit-audio-answer operate on the same sessions dict.
@@ -65,17 +65,12 @@ async def submit_audio_answer(
 
     transcribed_text = transcription["text"]
 
-    # ── 4. Evaluate using existing LangChain pipeline ─────────────────────────
-    try:
-        result = evaluate_transcribed_answer(transcribed_text, session)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Evaluation failed: {str(e)}")
-
-    # ── 5. Update session state (mirrors /submit logic) ───────────────────────
+    # ✅ BATCH EVALUATION v2: Just store the transcription, NO LLM CALL
+    # Store placeholder values (will be filled by batch evaluation later)
     session["student_answers"].append(transcribed_text)
-    session["scores"].append(result["score"]["overall"])
-    session["feedback"].append(result["feedback"])
-    session["ideal_answer"].append(result["ideal_answer"])
+    session["scores"].append(None)
+    session["feedback"].append(None)
+    session["ideal_answer"].append(None)
 
     session_complete = session["current_question_number"] >= session["max_questions"]
 
@@ -85,13 +80,13 @@ async def submit_audio_answer(
         next_doc = advance_session(session)
         next_question = next_doc["question"] if next_doc else None
 
-    # ── 6. Return combined result ─────────────────────────────────────────────
+    # ── 6. Return combined result (with empty feedback - will be generated via feedback_v2) ────
     return AudioSubmissionResponse(
         transcribed_text=transcribed_text,
-        feedback=result["feedback"],
-        ideal_answer=result["ideal_answer"],
-        missing_concepts=result.get("missing_concepts", []),
-        score=FeedbackScore(**result["score"]),
+        feedback="",
+        ideal_answer="",
+        missing_concepts=[],
+        score=FeedbackScore(accuracy=0, clarity=0, completeness=0, overall=0),
         next_question=next_question,
         session_complete=session_complete,
         audio_duration_seconds=transcription["duration"],
