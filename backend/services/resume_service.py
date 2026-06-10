@@ -2,7 +2,8 @@ import os
 import json
 import re
 from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
+# from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openrouter import ChatOpenRouter
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_ollama import ChatOllama
@@ -10,12 +11,13 @@ from langchain_ollama import ChatOllama
 load_dotenv()
 
 # ── LLM Setup ────────────────────────────────────────────────────────────────
-llm = ChatOllama(model="llama3.2")
-llm2 = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",
-    google_api_key=os.getenv("GEMINI_API_KEY"),
-    temperature=0.2,
-)
+llm = ChatOpenRouter(model="openai/gpt-oss-120b:free")
+llm1 = ChatOllama(model="llama3.2:3b")
+# llm2 = ChatGoogleGenerativeAI(
+    # model="gemini-1.5-flash",
+    # google_api_key=os.getenv("GEMINI_API_KEY"),
+    # temperature=0.2,
+# )
 
 # ── Available Roles ─────────────────────────────────────────────────────────
 AVAILABLE_ROLES = [

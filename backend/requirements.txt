@@ -27,3 +27,8 @@ torch                 # Required by Whisper
 ffmpeg-python       # Audio format conversion (WAV/MP3 → compatible format)
 # pydub
 # pyaudioop
+
+langchain-ollama
+langchain-huggingface
+pdfplumber
+sentence-transformers

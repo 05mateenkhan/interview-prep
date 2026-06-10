@@ -2,9 +2,9 @@ import os
 import pandas as pd
 from dotenv import load_dotenv
 from langchain_core.documents import Document
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+# from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
-from langchain_ollama import OllamaEmbeddings
+# from langchain_ollama import OllamaEmbeddings
 from langchain_huggingface import HuggingFaceEmbeddings
 import random
 load_dotenv()
@@ -46,18 +46,20 @@ def get_vector_store() -> FAISS:
     csv_path = os.path.join(os.path.dirname(__file__), "..", "data", "QnA.csv")
     documents = _load_documents(csv_path)
 
-    embeddings_gem = GoogleGenerativeAIEmbeddings(
-        model="models/test-embedding-004",
-    )
-    embeddings_ol = OllamaEmbeddings(
-        model="embeddinggemma"
-    )
+    # embeddings_gem = GoogleGenerativeAIEmbeddings(
+    #     model="models/test-embedding-004",
+    # )
+    # embeddings_ol = OllamaEmbeddings(
+    #     model="embeddinggemma"
+    # )
     embeddings_hf = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
 
     _vector_store = FAISS.from_documents(documents, embeddings_hf)
     print(f"✅ FAISS index built with {len(documents)} documents.")
+    print(_vector_store.index.ntotal)
+    print(len(_vector_store.index_to_docstore_id))
     return _vector_store
 
 

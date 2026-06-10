@@ -2,7 +2,8 @@ import os
 import json
 import re
 from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
+# from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openrouter import ChatOpenRouter
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_ollama import ChatOllama
@@ -11,8 +12,11 @@ load_dotenv()
 
 # ── LLM Setup ────────────────────────────────────────────────────────────────
 # Using 3B model for better JSON compliance while still being fast
-llm = ChatOllama(model="llama3.2:3b")
+# llm = ChatOllama(model="llama3.2:3b")
+
 # llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
+
+llm = ChatOpenRouter(model="openai/gpt-oss-120b:free")
 
 # ── Prompt Template ──────────────────────────────────────────────────────────
 EVALUATION_PROMPT = ChatPromptTemplate.from_messages([
