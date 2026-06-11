@@ -47,7 +47,7 @@ def get_vector_store() -> FAISS:
     documents = _load_documents(csv_path)
 
     embeddings_gem = GoogleGenerativeAIEmbeddings(
-        model="models/test-embedding-004",
+        model="models/text-embedding-004",
     )
     # embeddings_ol = OllamaEmbeddings(
     #     model="embeddinggemma"
