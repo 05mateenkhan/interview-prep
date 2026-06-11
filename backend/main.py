@@ -24,7 +24,7 @@ app.include_router(voice_router)
 async def startup():
     """Pre-build FAISS index on startup so first request isn't slow."""
     get_vector_store()
-    get_whisper_model()
+    # get_whisper_model()
 
 @app.get("/")
 def root():
