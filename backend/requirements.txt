@@ -35,5 +35,6 @@ ffmpeg-python       # Audio format conversion (WAV/MP3 → compatible format)
 
 langchain-ollama
 langchain-huggingface
+langchain-openrouter
 pdfplumber
 sentence-transformers
