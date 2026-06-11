@@ -12,7 +12,7 @@ load_dotenv()
 
 # ── LLM Setup ────────────────────────────────────────────────────────────────
 llm = ChatOpenRouter(model="openai/gpt-oss-120b:free")
-llm1 = ChatOllama(model="llama3.2:3b")
+# llm1 = ChatOllama(model="llama3.2:3b")
 # llm2 = ChatGoogleGenerativeAI(
     # model="gemini-1.5-flash",
     # google_api_key=os.getenv("GEMINI_API_KEY"),
