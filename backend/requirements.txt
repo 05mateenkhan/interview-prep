@@ -37,4 +37,4 @@ langchain-ollama
 langchain-huggingface
 langchain-openrouter
 pdfplumber
-sentence-transformers
+# sentence-transformers

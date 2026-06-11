@@ -5,7 +5,7 @@ from langchain_core.documents import Document
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
 # from langchain_ollama import OllamaEmbeddings
-from langchain_huggingface import HuggingFaceEmbeddings
+# from langchain_huggingface import HuggingFaceEmbeddings
 import random
 load_dotenv()
 
@@ -59,7 +59,7 @@ def get_vector_store() -> FAISS:
     # _vector_store = FAISS.from_documents(documents, embeddings_hf)
     _vector_store = FAISS.load_local(
         "faiss_index",
-        embeddings_hf,
+        embeddings_gem,
         allow_dangerous_deserialization=True
     )
     print(f"✅ FAISS index built with {len(documents)} documents.")
